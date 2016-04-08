@@ -1,10 +1,19 @@
 taravel
 ==============================
 
+.. image:: https://pyup.io/repos/github/ad-m/taravel/shield.svg
+     :target: https://pyup.io/repos/github/ad-m/taravel/
+     :alt: Updates
+
+.. image:: https://pyup.io/repos/github/ad-m/taravel/python-3-shield.svg
+     :target: https://pyup.io/repos/github/ad-m/taravel/
+     :alt: Python 3
+
+
 Celem strony jest pokazanie, jakie informacje są w posiadaniu spółek, a mimo to nie publikują one ich na BIP + wskazanie, czemu te informacje są czy mogą być ważne dla mieszkańców i zachęcenie mieszkańców do interesowania się.
 
 
-LICENSE: BSD
+LICENSE: MIT
 
 Settings
 ------------

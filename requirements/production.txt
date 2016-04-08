@@ -8,7 +8,7 @@
 # ------------------------------------------------
 
 # there's no python 3 support in stable, have to use the latest release candidate for gevent
-gevent==1.1rc5
+gevent==1.1.1
 
 gunicorn==19.4.5
 
@@ -24,7 +24,7 @@ django-mailgun==0.8.0
 
 # Raven is the Sentry client
 # --------------------------
-raven
+raven==5.12.0
 
 
 

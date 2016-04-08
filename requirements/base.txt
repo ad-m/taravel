@@ -47,3 +47,6 @@ redis>=2.10.0
 
 
 # Your custom requirements go here
+django-bleach==0.3.0
+django-versatileimagefield==1.3
+

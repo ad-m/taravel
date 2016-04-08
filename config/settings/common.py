@@ -45,6 +45,10 @@ THIRD_PARTY_APPS = (
 # Apps specific for this project go here.
 LOCAL_APPS = (
     'taravel.users',  # custom users app
+    'taravel.trips',
+    'taravel.guests',
+    'taravel.orders',
+    'taravel.locations',
     # Your stuff: custom apps go here
 )
 
@@ -231,3 +235,4 @@ AUTOSLUG_SLUGIFY_FUNCTION = 'slugify.slugify'
 ADMIN_URL = r'^admin/'
 
 # Your common stuff: Below this line define 3rd party library settings
+CHILD_DISCOUNT = 5

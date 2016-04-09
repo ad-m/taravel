@@ -9,6 +9,11 @@ taravel
      :target: https://pyup.io/repos/github/ad-m/taravel/
      :alt: Python 3
 
+.. image:: https://api.travis-ci.org/ad-m/taravel.png
+     :target: hhttps://travis-ci.org/ad-m/taravel
+     :alt: Travis-CI
+
+
 
 Celem strony jest pokazanie, jakie informacje są w posiadaniu spółek, a mimo to nie publikują one ich na BIP + wskazanie, czemu te informacje są czy mogą być ważne dla mieszkańców i zachęcenie mieszkańców do interesowania się.
 

@@ -10,7 +10,7 @@
   <div class="col-xl-8">
     {% for object in object_list %}
     <div class="card">
-      <img class="card-img-top" data-src="..." alt="Card image cap">
+    <img class="card-img-top" src="{{object.main_image.thumbnail.318x200}}">
       <div class="card-block">
         <h4 class="card-title">{{object}}</h4>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>

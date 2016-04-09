@@ -15,12 +15,12 @@
 </ol>
 
   <div class="card">
-    <img class="card-img-top" src="{{object.main_image.thumbnail.318x200}}" alt="Card image cap">
+    <img class="card-img-top" src="{{object.main_image.thumbnail.318x200}}">
     <div class="card-block">
       <h4 class="card-title">{{object}}</h4>
       <p class="card-text">{{object.description}}</p>
     </div>
   </div>
 
-<a href="{% url 'orders:create' trip_slug=object.slug %}">{% trans 'Order trip now' %}</a>
+<a href="{% url 'orders:create' trip_slug=object.slug %}" class="btn btn-primary">{% trans 'Order trip now' %}</a>
 {% endblock %}

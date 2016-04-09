@@ -14,7 +14,7 @@ class GuestQuerySet(models.QuerySet):
 
 
 @python_2_unicode_compatible
-class Guest(TimeStampedModel):
+class Guest(TimeStampedModel):  # TODO: Move to taravel.orders
     order = models.ForeignKey(to=Order, verbose_name=_("Order"))
     first_name = models.CharField(verbose_name=_("First name"), max_length=50)
     second_name = models.CharField(verbose_name=_("Second name"), max_length=50)

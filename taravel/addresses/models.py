@@ -32,8 +32,12 @@ class Address(models.Model):
         permissions = (("view_address", "Can view address"),)
 
     def __str__(self):
-        return _("{name} (Street {street} {street_number}," +
-                 " {postcode} {city})").format(**self.__dict__)
+        return ("{name} (Street {street} {street_number}," +
+                " {postcode} {city})").format(name=self.name,
+                                              street=self.street,
+                                              street_number=self.street_number,
+                                              postcode=self.postcode,
+                                              city=self.city)
 
     @cached_property
     def used(self):

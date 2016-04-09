@@ -4,7 +4,6 @@ from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
-from model_utils.models import TimeStampedModel
 
 from taravel.orders.models import Order
 
@@ -14,7 +13,7 @@ class GuestQuerySet(models.QuerySet):
 
 
 @python_2_unicode_compatible
-class Guest(TimeStampedModel):  # TODO: Move to taravel.orders
+class Guest(models.Model):  # TODO: Move to taravel.orders
     order = models.ForeignKey(to=Order, verbose_name=_("Order"))
     first_name = models.CharField(verbose_name=_("First name"), max_length=50)
     second_name = models.CharField(verbose_name=_("Second name"), max_length=50)

@@ -17,7 +17,9 @@ class Country(models.Model):
                         (4, 'antarctica', 'Antarctica'),
                         (5, 'europe', 'Europe'),
                         (6, 'australia', 'Australia'))
-    continent = models.IntegerField(choices=CONTINENT, default=CONTINENT.europe)
+    continent = models.IntegerField(choices=CONTINENT,
+                                    default=CONTINENT.europe,
+                                    verbose_name=_("Continent"))
     name = models.CharField(_("Name of country"), max_length=255)
     slug = AutoSlugField(populate_from='name', verbose_name=_("Slug"), unique=True)
 

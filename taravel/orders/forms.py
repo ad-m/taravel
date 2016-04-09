@@ -9,14 +9,22 @@ class OrderForm(UserKwargModelFormMixin, forms.ModelForm):
     def __init__(self, *args, **kwargs):
         trip = kwargs.pop('trip', None)
         super(OrderForm, self).__init__(*args, **kwargs)
+        if self.instance and hasattr(self.instance, 'user'):
+            self.fields['address'].queryset = self.instance.user.address_set.all()
+        else:
+            self.fields['address'].queryset = self.user.address_set.all()
+
         if trip:
             self.instance.trip = trip
         if self.user:
             self.instance.user = self.user
 
+        if not self.user.has_perm('orders.mar_paid_order'):
+            del self.fields['paid']
+
     class Meta:
         model = Order
-        fields = ['note', 'address']
+        fields = ['note', 'address', 'paid']
 
 
 class OrderPaidForm(UserKwargModelFormMixin, forms.ModelForm):
@@ -33,4 +41,3 @@ class OrderPaidForm(UserKwargModelFormMixin, forms.ModelForm):
     class Meta:
         model = Order
         fields = []
-

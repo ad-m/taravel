@@ -62,7 +62,8 @@ class OrderCreateView(NamedFormsetsMixin, UserFormKwargsMixin, CreateWithInlines
         return self.object.get_absolute_url()
 
 
-class OrderUpdateView(NamedFormsetsMixin, FormValidMessageMixin, UpdateWithInlinesView):
+class OrderUpdateView(NamedFormsetsMixin, UserFormKwargsMixin, FormValidMessageMixin,
+                      UpdateWithInlinesView):
     model = Order
     form_class = OrderForm
     permission_required = 'orders.change_order'

@@ -12,8 +12,6 @@ env:
     - TOX_ENV=py34-djmaster
     - TOX_ENV=py35-dj19
     - TOX_ENV=py35-djmaster
-    - TOX_ENV=pypy-dj19
-    - TOX_ENV=pypy-djmaster
 
 matrix:
   allow_failures:

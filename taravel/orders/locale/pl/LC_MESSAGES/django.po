@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-09 14:45+0000\n"
+"POT-Creation-Date: 2016-04-09 15:58+0000\n"
 "PO-Revision-Date: 2016-04-09 16:44+0200\n"
 "Last-Translator: Adam Dobrawy <naczelnik@jawnosc.tk>\n"
 "Language-Team: \n"
@@ -112,12 +112,12 @@ msgstr "Zobacz wszystkie zamówienia"
 msgid "Are you sure you want to mark \"%(object)s\" as paid?"
 msgstr "Czy jesteś pewien, że chcesz oznaczyć \"%(object)s\" jako opłacony?"
 
-#: views.py:73
+#: views.py:74
 #, python-brace-format
 msgid "{0} updated!"
 msgstr "{0} zaktualizowany!"
 
-#: views.py:82 views.py:92
+#: views.py:83 views.py:93
 #, python-brace-format
 msgid "{0} deleted!"
 msgstr "{0} usunięty!"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-09 14:45+0000\n"
+"POT-Creation-Date: 2016-04-09 15:58+0000\n"
 "PO-Revision-Date: 2016-04-09 16:46+0200\n"
 "Last-Translator: Adam Dobrawy <naczelnik@jawnosc.tk>\n"
 "Language-Team: \n"
@@ -87,7 +87,11 @@ msgstr "Edytuj wycieczkę"
 msgid "Remove trip"
 msgstr "Usuń wycieczkę"
 
-#: templates/trips/trip_detail.html:25
+#: templates/trips/trip_detail.html:23
+msgid "Created by"
+msgstr ""
+
+#: templates/trips/trip_detail.html:28
 msgid "Order trip now"
 msgstr "Zamów wycieczkę teraz"
 
@@ -111,12 +115,12 @@ msgstr "Dodaj kraj"
 msgid "Save"
 msgstr "Zapisz"
 
-#: views.py:79
+#: views.py:59
 #, python-brace-format
 msgid "{0} updated!"
 msgstr "{0} zaktualizowany"
 
-#: views.py:88
+#: views.py:68
 #, python-brace-format
 msgid "{0} deleted!"
 msgstr "{0} usunięty!"

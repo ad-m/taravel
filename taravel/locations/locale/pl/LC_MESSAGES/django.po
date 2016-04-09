@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-09 14:46+0000\n"
+"POT-Creation-Date: 2016-04-09 15:58+0000\n"
 "PO-Revision-Date: 2016-04-09 16:44+0200\n"
 "Last-Translator: Adam Dobrawy <naczelnik@jawnosc.tk>\n"
 "Language-Team: \n"
@@ -19,35 +19,39 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 1.8.4\n"
 
-#: models.py:21
+#: models.py:22
+msgid "Continent"
+msgstr ""
+
+#: models.py:23
 msgid "Name of country"
 msgstr "Nazwa kraju"
 
-#: models.py:22 models.py:43
+#: models.py:24 models.py:45
 msgid "Slug"
 msgstr "Identyfikator redakcyjny"
 
-#: models.py:25 models.py:41
+#: models.py:27 models.py:43
 msgid "Country"
 msgstr "Kraj"
 
-#: models.py:26
+#: models.py:28
 msgid "Countries"
 msgstr "Kraje"
 
-#: models.py:42
+#: models.py:44
 msgid "Name"
 msgstr "Nazwa"
 
-#: models.py:44
+#: models.py:46
 msgid "Position"
 msgstr "Pozycja"
 
-#: models.py:48
+#: models.py:50
 msgid "Location"
 msgstr "Miejsce"
 
-#: models.py:49
+#: models.py:51
 msgid "Locations"
 msgstr "Miejsca"
 

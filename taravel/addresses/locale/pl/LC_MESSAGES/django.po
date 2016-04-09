@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-09 14:45+0000\n"
+"POT-Creation-Date: 2016-04-09 15:58+0000\n"
 "PO-Revision-Date: 2016-04-09 16:44+0200\n"
 "Last-Translator: Adam Dobrawy <naczelnik@jawnosc.tk>\n"
 "Language-Team: \n"
@@ -75,17 +75,17 @@ msgstr "Zaktualizuj"
 msgid "Delete"
 msgstr "Usun"
 
-#: views.py:38
+#: views.py:43
 #, python-brace-format
 msgid "{0} created!"
 msgstr "{0} utworzony!"
 
-#: views.py:59
+#: views.py:64
 #, python-brace-format
 msgid "{0} updated!"
 msgstr "{0} zaktualizowany!"
 
-#: views.py:72
+#: views.py:77
 #, python-brace-format
 msgid "{0} deleted!"
 msgstr "{0} usunięty!"

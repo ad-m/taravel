@@ -24,6 +24,11 @@ class AddressListView(AddressPermissionMixin, FilterView):
     model = Address
     paginate_by = 25
 
+    def get_queryset(self, *args, **kwargs):
+        qs = super(AddressListView, self).get_queryset(*args, **kwargs)
+        qs = qs.filter(user__username=self.kwargs['username'])
+        return qs
+
 
 class AddressDetailView(AddressPermissionMixin, DetailView):
     model = Address

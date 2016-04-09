@@ -9,6 +9,7 @@ Local settings
 '''
 
 from .common import *  # noqa
+environ.Env.read_env()
 
 # DEBUG
 # ------------------------------------------------------------------------------

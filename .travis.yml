@@ -1,10 +1,26 @@
-sudo: true
 language: python
-python:
-- "3.5"
+python: 3.5
+
+cache:
+  directories:
+    - $HOME/.cache/pip
+
+
+env:
+  matrix:
+    - TOX_ENV=py34-dj19
+    - TOX_ENV=py34-djmaster
+    - TOX_ENV=py35-dj19
+    - TOX_ENV=py35-djmaster
+    - TOX_ENV=pypy-dj19
+    - TOX_ENV=pypy-djmaster
 
 before_script:
   - psql -U postgres -c "create extension postgis"
 
+install:
+  - pip install -U pip wheel
+  - pip install tox
 script:
-  - tox
+  - tox -e "$TOX_ENV"
+

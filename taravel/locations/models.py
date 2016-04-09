@@ -28,6 +28,9 @@ class Country(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return "%s?location__country=%d" % (reverse('trips:list'), self.pk)
+
 
 class LocationQuerySet(models.query.GeoQuerySet):
     pass
@@ -49,4 +52,4 @@ class Location(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('locations:details', kwargs={'slug': self.slug})
+        return "%s?location=%d" % (reverse('trips:list'), self.pk)

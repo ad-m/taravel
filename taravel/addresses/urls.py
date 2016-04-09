@@ -9,10 +9,10 @@ urlpatterns = [
         name="list"),
     url(r'^~create$', views.AddressCreateView.as_view(),
         name="create"),
-    url(r'^(?P<username>[\w.@+-]+)/address-(?P<pk>\d)$', views.AddressDetailView.as_view(),
+    url(r'^(?P<username>[\w.@+-]+)/address-(?P<pk>\d+)$', views.AddressDetailView.as_view(),
         name="details"),
-    url(r'^(?P<username>[\w.@+-]+)/address-(?P<pk>\d)/~update$', views.AddressUpdateView.as_view(),
+    url(r'^(?P<username>[\w.@+-]+)/address-(?P<pk>\d+)/~update$', views.AddressUpdateView.as_view(),
         name="update"),
-    url(r'^(?P<username>[\w.@+-]+)/address-(?P<pk>\d)/~delete$', views.AddressDeleteView.as_view(),
+    url(r'^(?P<username>[\w.@+-]+)/address-(?P<pk>\d+)/~delete$', views.AddressDeleteView.as_view(),
         name="delete"),
 ]

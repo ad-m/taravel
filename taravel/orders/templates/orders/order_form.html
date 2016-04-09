@@ -1,0 +1,25 @@
+{% extends 'orders/order_base.html' %}
+{% load crispy_forms_tags i18n %}
+{% block javascript %}
+{{block.super}}
+<script src="https://raw.githubusercontent.com/elo80ka/django-dynamic-formset/v1.2.2/src/jquery.formset.js"></script>
+<script>
+$(function() {
+        $('#form-guest tr').formset({
+            prefix: '{{ guest.prefix }}',
+        });
+});
+</script>
+{% endblock %}
+{% block content %}
+<form method="POST" class="form-horizontal">
+{{ form | crispy }}
+<h2>{% trans 'Guest' %}</h2>
+{% if guest %}
+<div id="form-guest">
+{% crispy guest %}
+</div>
+{% endif %}
+<input type="submit" class="btn btn-primary" value="{% trans 'Order and pay' %}">
+</form>
+{% endblock %}

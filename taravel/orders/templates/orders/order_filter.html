@@ -1,0 +1,44 @@
+{% extends 'orders/order_base.html' %}
+{% load i18n crispy_forms_tags %}
+{% block content %}
+    <ol class="breadcrumb">
+      <li class="active">{% trans 'Orders' %}</li>
+  </ol>
+
+
+  <div class="row">
+      <div class="col-xl-4">{% crispy filter.form %}</div>
+      <div class="col-xl-8">
+        {% if object_list %}
+            <table class="table table-striped">
+                <tr>
+                    <th>{% trans 'Order' %}</th>
+                    <th>{% trans 'Value' %}</th>
+                    <th>{% trans 'Created' %}</th>
+                    <th>{% trans 'Paid' %}</th>
+                    <th>{% trans 'Action' %}</th>
+                </tr>
+                {% for object in object_list %}
+                    <tr>
+                        <td>{{object}}</td>
+                        <td>{{object.value}}</td>
+                        <td>{{object.created}}</td>
+                        <td>{% include 'orders/_paid_badge.html' with object=object %}</td>
+                        
+                        <td>
+                            <a href="{{object.get_absolute_url}}" class="btn btn-primary btn-sm">{% trans 'Details' %}</a>
+
+                            {% if perms.orders.mark_paid_order and not object.is_paid %}
+                            <a href="{% url 'orders:paid' pk=object.pk %}" class="btn btn-info btn-sm">{% trans 'Mark paid' %}</a>
+                            {% endif %}
+
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+<ol class="breadcrumb">
+  <li><a href="{% url 'orders:list' %}">{% trans 'Orders' %}</a></li>
+  <li class="active">{{object}}</li>
+</ol>
+
+{% if perms.orders.mark_paid_order and not order.is_paid %}
+    <a href="{% url 'orders:paid' pk=object.pk %}" class="btn btn-info">{% trans 'Mark paid' %}</a>
+{% endif %}
+
+{% if perms.orders.change_order %}
+    <a href="{% url 'orders:update' pk=object.pk %}" class="btn btn-info">{% trans 'Update order' %}</a>
+{% endif %}
+
+<p>Paid: {% include 'orders/_paid_badge.html' with object=object %}</p>
+<p>Trip: <a href="{{object.trip.get_absolute_url}}">{{object.trip}}</a></p>
+<p>User: <a href="{{object.user.get_absolute_url}}">{{object.user}}</a></p>
+{% for quest in object.quest_set.all %}
+
+{% endfor %}
+
+{% if object.guest_set.all %}
+<table class="table table-striped">
+    <tr>
+        <th>{% trans 'Guest' %}</th>
+        <th>{% trans 'Child' %}</th>
+        <th>{% trans 'Value' %}</th>
+    </tr>
+{% for object in object.guest_set.all %}
+    <tr>
+        <td>{{object}}</td>
+        <td>{{object.child | yesno:'yes,no'}} </td>
+        <td>{{object.value}}</td>
+    </tr>
+{% endfor %}
+</table>
+{% else %}
+{% trans 'No guests.' %}
+{% endif %}
+
+{% endblock %}

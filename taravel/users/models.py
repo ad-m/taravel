@@ -23,22 +23,3 @@ class User(AbstractUser):
 
     def get_absolute_url(self):
         return reverse('users:detail', kwargs={'username': self.username})
-
-
-@python_2_unicode_compatible
-class Address(models.Model):
-    name = models.CharField(verbose_name=_("Name"), max_length=100)
-    street = models.CharField(verbose_name=_("Street"), max_length=50)
-    street_number = models.CharField(verbose_name=_("Street number"), max_length=10)
-    postcode = models.CharField(verbose_name=_("Postcode"), max_length=6)
-    city = models.CharField(verbose_name=_("City"), max_length=50)
-    taxpayer_id = models.IntegerField(verbose_name=_("Taxpayer ID"),
-                                      help_text=_("Awarded by the government"))
-
-    class Meta:
-        verbose_name = _("Address")
-        verbose_name_plural = _("Addresses")
-
-    def __str__(self):
-        return _("{name} (Street {street} {stret_number}," +
-                 " {postcode} {city})").format(**self.__dict__())

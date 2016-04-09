@@ -51,6 +51,7 @@ LOCAL_APPS = (
     'taravel.guests',
     'taravel.orders',
     'taravel.locations',
+    'taravel.addresses',
     # Your stuff: custom apps go here
 )
 

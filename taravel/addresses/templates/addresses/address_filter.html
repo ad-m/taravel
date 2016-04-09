@@ -1,0 +1,39 @@
+{% extends 'addresses/address_base.html' %}
+{% load i18n crispy_forms_tags %}
+{% block content %}
+{% if perms.addresses.add_address %}
+<a href="{% url 'addresses:create' %}" class="btn btn-info">{% trans 'Add address' %}</a>
+{% endif %}
+
+<div class="row">
+  <div class="col-xl-4">{% crispy filter.form %}</div>
+  <div class="col-xl-8">
+    {% if object_list %}
+    <table class="table table-striped">
+        <tr>
+            <th>{% trans 'Address' %}</th>
+            <th>{% trans 'Action' %}</th>
+        </tr>
+    {% for object in object_list %}
+        <tr>
+            <td>{{object}}</td>
+            <td>
+                {% if perms.has_perm.change_address or view.kwargs.username == requests.user.username %}
+                <a href="{% url 'addresses:update' username=view.kwargs.username pk=object.pk %}" class="btn btn-info btn-sm">
+                    {% trans 'Update' %}
+                </a>
+                {% endif %}
+
+                {% if perms.has_perm.delete_address %}
+                <a href="{% url 'addresses:delete' username=view.kwargs.username pk=object.pk %}" class="btn btn-info btn-sm">
+                    {% trans 'Delete' %}
+                </a>
+                {% endif %}
+            </td>
+        </tr>
+   {% endfor %}
+   {% endif %}
+  </div>
+</div>
+
+{% endblock %}

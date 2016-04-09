@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^trips/', include("taravel.trips.urls", namespace="trips")),
     url(r'^locations/', include("taravel.locations.urls", namespace="locations")),
     url(r'^orders/', include("taravel.orders.urls", namespace="orders")),
+    url(r'^addresses/', include("taravel.addresses.urls", namespace="addresses")),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

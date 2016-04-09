@@ -2,7 +2,8 @@ import factory
 import factory.fuzzy
 from . import models
 
-from taravel.users.factories import UserFactory
+from ..users.factories import UserFactory
+from ..locations.factories import LocationFactory
 
 
 class TripFactory(factory.django.DjangoModelFactory):
@@ -12,6 +13,7 @@ class TripFactory(factory.django.DjangoModelFactory):
     base_price = factory.fuzzy.FuzzyInteger(low=100, high=200)
     space = factory.fuzzy.FuzzyInteger(low=3, high=10)
     main_image = factory.django.ImageField()
+    location = factory.SubFactory(LocationFactory)
 
     class Meta:
         model = models.Trip

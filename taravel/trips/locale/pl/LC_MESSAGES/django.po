@@ -1,0 +1,122 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-04-09 14:45+0000\n"
+"PO-Revision-Date: 2016-04-09 16:46+0200\n"
+"Last-Translator: Adam Dobrawy <naczelnik@jawnosc.tk>\n"
+"Language-Team: \n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 1.8.4\n"
+
+#: filters.py:19 filters.py:21
+msgid "Price (ascending)"
+msgstr "Cena (rosnąco)"
+
+#: filters.py:20
+msgid "Price (descending)"
+msgstr "Cena (malejąco)"
+
+#: filters.py:22
+msgid "Country (ascending)"
+msgstr "Kraj (rosnąco)"
+
+#: filters.py:23
+msgid "Country (descending)"
+msgstr "Kraj (malejąco)"
+
+#: models.py:19
+msgid "Location"
+msgstr "Miejsce"
+
+#: models.py:20
+msgid "Name"
+msgstr "Nazwa"
+
+#: models.py:21
+msgid "Slug"
+msgstr "Identyfikator redakcyjny"
+
+#: models.py:23
+msgid "Description of trip"
+msgstr "Opis wycieczki"
+
+#: models.py:24
+msgid "Price"
+msgstr "Cena"
+
+#: models.py:25
+msgid "Space"
+msgstr "Miejsca"
+
+#: models.py:27
+msgid "The maximum number of guests"
+msgstr "Maksymalna liczba gości"
+
+#: models.py:28 models.py:47 models.py:53 templates/trips/trip_form.html.py:27
+msgid "Image"
+msgstr "Obraz"
+
+#: models.py:32 models.py:46
+msgid "Trip"
+msgstr "Wycieczka"
+
+#: models.py:33
+msgid "Trips"
+msgstr "Wycieczki"
+
+#: models.py:54
+msgid "Images"
+msgstr "Obrazy"
+
+#: templates/trips/trip_detail.html:5
+msgid "Change trip"
+msgstr "Edytuj wycieczkę"
+
+#: templates/trips/trip_detail.html:8
+msgid "Remove trip"
+msgstr "Usuń wycieczkę"
+
+#: templates/trips/trip_detail.html:25
+msgid "Order trip now"
+msgstr "Zamów wycieczkę teraz"
+
+#: templates/trips/trip_filter.html:5
+msgid "Add trip"
+msgstr "Dodaj wycieczkę"
+
+#: templates/trips/trip_filter.html:17
+msgid "Details"
+msgstr "Szczegóły"
+
+#: templates/trips/trip_form.html:16
+msgid "Add location"
+msgstr "Dodaj miejsce"
+
+#: templates/trips/trip_form.html:20
+msgid "Add country"
+msgstr "Dodaj kraj"
+
+#: templates/trips/trip_form.html:33
+msgid "Save"
+msgstr "Zapisz"
+
+#: views.py:79
+#, python-brace-format
+msgid "{0} updated!"
+msgstr "{0} zaktualizowany"
+
+#: views.py:88
+#, python-brace-format
+msgid "{0} deleted!"
+msgstr "{0} usunięty!"

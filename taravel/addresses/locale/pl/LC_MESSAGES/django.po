@@ -1,0 +1,91 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-04-09 14:45+0000\n"
+"PO-Revision-Date: 2016-04-09 16:44+0200\n"
+"Last-Translator: Adam Dobrawy <naczelnik@jawnosc.tk>\n"
+"Language-Team: \n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 1.8.4\n"
+
+#: models.py:18
+msgid "User"
+msgstr "Użytkownik / użytkowniczka"
+
+#: models.py:19
+msgid "Name"
+msgstr "Nazwa"
+
+#: models.py:20
+msgid "Street"
+msgstr "Ulica"
+
+#: models.py:21
+msgid "Street number"
+msgstr "Numer ulicy"
+
+#: models.py:22
+msgid "Postcode"
+msgstr "Kod pocztow"
+
+#: models.py:23
+msgid "City"
+msgstr "Miejscowość"
+
+#: models.py:24
+msgid "Taxpayer ID"
+msgstr "Identyfikator podatnika"
+
+#: models.py:25
+msgid "Awarded by the government"
+msgstr "Nadany przez władze"
+
+#: models.py:30 templates/addresses/address_filter.html.py:14
+msgid "Address"
+msgstr "Adres"
+
+#: models.py:31
+msgid "Addresses"
+msgstr "Adresy"
+
+#: templates/addresses/address_filter.html:5
+msgid "Add address"
+msgstr "Dodaj adres"
+
+#: templates/addresses/address_filter.html:15
+msgid "Action"
+msgstr "Akcja"
+
+#: templates/addresses/address_filter.html:23
+msgid "Update"
+msgstr "Zaktualizuj"
+
+#: templates/addresses/address_filter.html:29
+msgid "Delete"
+msgstr "Usun"
+
+#: views.py:38
+#, python-brace-format
+msgid "{0} created!"
+msgstr "{0} utworzony!"
+
+#: views.py:59
+#, python-brace-format
+msgid "{0} updated!"
+msgstr "{0} zaktualizowany!"
+
+#: views.py:72
+#, python-brace-format
+msgid "{0} deleted!"
+msgstr "{0} usunięty!"

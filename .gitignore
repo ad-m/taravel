@@ -55,9 +55,6 @@ node_modules/
 # virtual environments
 .env
 
-# User-uploaded media
-bliski_pubikator/media/
-
 # Hitch directory
 tests/.hitch
 
@@ -67,3 +64,5 @@ mailhog
 bin
 
 taravel/media/
+*.egg-info/
+

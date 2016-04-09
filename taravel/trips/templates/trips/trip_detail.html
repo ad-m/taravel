@@ -19,6 +19,9 @@
     <div class="card-block">
       <h4 class="card-title">{{object}}</h4>
       <p class="card-text">{{object.description}}</p>
+      {% if request.user.is_staff %}
+        <p class="card-text">{% trans 'Created by' %} {{object.created_by}}</p>
+      {% endif %}
     </div>
   </div>
 

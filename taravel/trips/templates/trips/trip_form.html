@@ -1,5 +1,16 @@
 {% extends 'trips/trip_base.html' %}
-{% load i18n crispy_forms_tags %}
+{% load crispy_forms_tags i18n %}
+{% block javascript %}
+{{block.super}}
+<script src="https://raw.githubusercontent.com/elo80ka/django-dynamic-formset/v1.2.2/src/jquery.formset.js"></script>
+<script>
+$(function() {
+        $('#form-images tr').formset({
+            prefix: '{{ image.prefix }}',
+        });
+});
+</script>
+{% endblock %}
 {% block content %}
 {% if perms.locations.add_location %}
 <a href="{% url 'locations:create' %}" class="btn btn-info">{% trans 'Add location' %}</a>
@@ -10,5 +21,15 @@
 {% endif %}
 
 
-{% crispy form %}
+
+<form method="POST" class="form-horizontal" enctype="multipart/form-data">
+{{ form | crispy }}
+<h2>{% trans 'Image' %}</h2>
+{% if images %}
+<div id="form-images">
+{% crispy images %}
+</div>
+{% endif %}
+<input type="submit" class="btn btn-primary" value="{% trans 'Save' %}">
+</form>
 {% endblock %}

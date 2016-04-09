@@ -20,6 +20,9 @@ urlpatterns = [
     url(r'^accounts/', include('allauth.urls')),
 
     # Your stuff: custom urls includes go here
+    url(r'^trips/', include("taravel.trips.urls", namespace="trips")),
+    url(r'^locations/', include("taravel.locations.urls", namespace="locations")),
+    url(r'^orders/', include("taravel.orders.urls", namespace="orders")),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

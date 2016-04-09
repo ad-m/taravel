@@ -15,6 +15,12 @@ env:
     - TOX_ENV=pypy-dj19
     - TOX_ENV=pypy-djmaster
 
+matrix:
+  allow_failures:
+    - env: TOX_ENV=py34-djmaster
+    - env: TOX_ENV=py35-djmaster
+    - env: TOX_ENV=pypy-djmaster
+
 before_script:
   - psql -U postgres -c "create extension postgis"
 

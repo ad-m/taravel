@@ -18,7 +18,7 @@ class Country(models.Model):
                         (5, 'europe', 'Europe'),
                         (6, 'australia', 'Australia'))
     continent = models.IntegerField(choices=CONTINENT, default=CONTINENT.europe)
-    name = models.CharField(_("Name of User"), blank=True, max_length=255)
+    name = models.CharField(_("Name of country"), max_length=255)
     slug = AutoSlugField(populate_from='name', verbose_name=_("Slug"), unique=True)
 
     class Meta:
@@ -35,9 +35,10 @@ class LocationQuerySet(models.query.GeoQuerySet):
 
 @python_2_unicode_compatible
 class Location(models.Model):
+    country = models.ForeignKey(to=Country, verbose_name=_("Country"))
     name = models.CharField(verbose_name=_("Name"), max_length=50)
     slug = AutoSlugField(populate_from='name', verbose_name=_("Slug"), unique=True)
-    position = models.PointField(verbose_name=_("Position"))
+    position = models.PointField(verbose_name=_("Position"), null=True)
     objects = LocationQuerySet.as_manager()
 
     class Meta:

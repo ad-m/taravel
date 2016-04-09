@@ -43,7 +43,7 @@ class Migration(migrations.Migration):
                 ('slug', autoslug.fields.AutoSlugField(editable=False, populate_from=b'name', unique=True, verbose_name='Slug')),
                 ('description', django_bleach.models.BleachField(verbose_name='Description of trip')),
                 ('base_price', models.IntegerField(verbose_name='Price')),
-                ('space', models.IntegerField(default='The maximum number of guests', verbose_name='Space')),
+                ('space', models.IntegerField(help_text='The maximum number of guests', verbose_name='Space')),
                 ('main_image', versatileimagefield.fields.VersatileImageField(upload_to=b'images/', verbose_name='Image')),
                 ('created_by', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
                 ('locations', models.ManyToManyField(to='locations.Location', verbose_name='Locations')),

@@ -1,0 +1,26 @@
+{% extends 'trips/trip_base.html' %}
+{% load i18n crispy_forms_tags %}
+{% block content %}
+  {% if perms.trips.change_trip %}
+    <a href="{% url 'trips:update' slug=object.slug %}" class="btn btn-info">{% trans 'Change trip' %}</a>
+  {% endif %}
+  {% if perms.trips.delete_trip %}
+    <a href="{% url 'trips:delete' slug=object.slug %}" class="btn btn-info">{% trans 'Remove trip' %}</a>
+  {% endif %}
+
+<ol class="breadcrumb">
+  <li><a href="{{object.location.country.get_absolute_url}}">{{object.location.country}}</a></li>
+  <li><a href="{{object.location.get_absolute_url}}">{{object.location}}</a></li>
+  <li class="active">{{object}}</li>
+</ol>
+
+  <div class="card">
+    <img class="card-img-top" src="{{object.main_image.thumbnail.318x200}}" alt="Card image cap">
+    <div class="card-block">
+      <h4 class="card-title">{{object}}</h4>
+      <p class="card-text">{{object.description}}</p>
+    </div>
+  </div>
+
+<a href="{% url 'orders:create' trip_slug=object.slug %}">{% trans 'Order trip now' %}</a>
+{% endblock %}

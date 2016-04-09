@@ -16,13 +16,13 @@ class TripQuerySet(models.QuerySet):
 
 @python_2_unicode_compatible
 class Trip(TimeStampedModel):
+    location = models.ForeignKey(to=Location, verbose_name=_("Location"))
     name = models.CharField(verbose_name=_("Name"), max_length=100)
     slug = AutoSlugField(populate_from='name', verbose_name=_("Slug"), unique=True)
     created_by = models.ForeignKey(to=settings.AUTH_USER_MODEL)
     description = BleachField(verbose_name=_("Description of trip"))
     base_price = models.IntegerField(verbose_name=_("Price"))  # Custom model field
-    space = models.IntegerField(verbose_name=_("Space"), default=_("The maximum number of guests"))
-    locations = models.ManyToManyField(to=Location, verbose_name=_("Locations"))
+    space = models.IntegerField(verbose_name=_("Space"), default=10, help_text=_("The maximum number of guests"))
     main_image = VersatileImageField(_('Image'), upload_to='images/')
     objects = TripQuerySet.as_manager()
 

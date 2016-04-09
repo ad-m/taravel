@@ -1,0 +1,14 @@
+{% extends 'trips/trip_base.html' %}
+{% load i18n crispy_forms_tags %}
+{% block content %}
+{% if perms.locations.add_location %}
+<a href="{% url 'locations:create' %}" class="btn btn-info">{% trans 'Add location' %}</a>
+{% endif %}
+
+{% if perms.locations.add_country %}
+<a href="{% url 'locations:create_country' %}" class="btn btn-info">{% trans 'Add country' %}</a>
+{% endif %}
+
+
+{% crispy form %}
+{% endblock %}

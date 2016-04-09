@@ -1,0 +1,24 @@
+{% extends 'trips/trip_base.html' %}
+{% load i18n crispy_forms_tags %}
+{% block content %}
+{% if perms.trips.add_trip %}
+<a href="{% url 'trips:create' %}" class="btn btn-info">{% trans 'Add trip' %}</a>
+{% endif %}
+
+<div class="row">
+  <div class="col-xl-4">{% crispy filter.form %}</div>
+  <div class="col-xl-8">
+    {% for object in object_list %}
+    <div class="card">
+      <img class="card-img-top" data-src="..." alt="Card image cap">
+      <div class="card-block">
+        <h4 class="card-title">{{object}}</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="{{object.get_absolute_url}}" class="btn btn-primary">{% trans 'Details' %}</a>
+      </div>
+    </div>
+   {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

@@ -65,3 +65,4 @@ bin
 taravel/media/
 *.egg-info/
 
+bower_components/

@@ -44,7 +44,7 @@ class OrderDetailView(SelectRelatedMixin, PrefetchRelatedMixin, DetailView):
     prefetch_related = ['guest_set', ]
 
 
-class GuestInline(InlineFormSet):  # TODO: Calculate value
+class GuestInline(InlineFormSet):
     model = Guest
     formset_class = BaseTableFormSet
 

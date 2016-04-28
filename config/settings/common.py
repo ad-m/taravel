@@ -238,5 +238,4 @@ AUTOSLUG_SLUGIFY_FUNCTION = 'slugify.slugify'
 ADMIN_URL = r'^admin/'
 
 # Your common stuff: Below this line define 3rd party library settings
-CHILD_DISCOUNT = 5
 FILTERS_HELP_TEXT_FILTER = False

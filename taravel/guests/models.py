@@ -18,9 +18,6 @@ class Guest(models.Model):  # TODO: Move to taravel.orders
     first_name = models.CharField(verbose_name=_("First name"), max_length=50)
     second_name = models.CharField(verbose_name=_("Second name"), max_length=50)
     government_id = models.IntegerField(verbose_name=_("Government ID"))
-    child = models.BooleanField(verbose_name=_("Child"),
-                                help_text=_("Is a child?"),
-                                default=False)
     value = models.IntegerField(verbose_name=_("Value"))  # TODO: Custom model field
     objects = GuestQuerySet.as_manager()
 

@@ -23,7 +23,7 @@ var config = (function () {
         scss: {
             input: path.assets + '/scss/style.scss',
             include: [
-                // path.bower + '/bootstrap/scss/',
+                path.bower + '/bootstrap/scss/',
                 path.bower + '/font-awesome/scss',
                 path.assets + '/scss/',
             ],

@@ -1,5 +1,5 @@
-// @import 'variables';
-// @import 'bootstrap';
+@import 'variables';
+@import 'bootstrap';
 @import 'font-awesome';
 /* These styles are generated from project.scss. */
 
@@ -85,6 +85,6 @@ html, body, .content{
 .breadcrumb li {
     float: left; 
 }
-.breadcrumb li a:after:; { 
+.breadcrumb li a:after { 
   content: " / "; 
 }

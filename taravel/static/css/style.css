@@ -6842,9 +6842,3 @@ html, body, .content {
 
 .payment-success {
   background-color: lime; }
-
-.breadcrumb li {
-  float: left; }
-
-.breadcrumb li a:after {
-  content: " / "; }

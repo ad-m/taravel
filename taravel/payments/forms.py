@@ -10,7 +10,7 @@ class PaymentForm(UserKwargModelFormMixin, forms.ModelForm):
         super(PaymentForm, self).__init__(*args, **kwargs)
         if order:
             self.instance.order = order
-        self.instance.user = self.user
+        self.instance.cashier = self.user
 
     class Meta:
         model = Payment

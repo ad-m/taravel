@@ -29,7 +29,7 @@
 {% if order_list %}
 <div class="well">
 <h2>{% trans 'Your orders of the trip' %}</h2>
-{% include 'orders/_order_list_mini.html' with object_list=order_list %}
+{% include 'orders/_order_list_mini.html' with object_list=order_list show_value=True %}
 </div>
 {% endif %}
 {% endblock %}

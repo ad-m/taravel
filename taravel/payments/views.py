@@ -59,21 +59,20 @@ class PaymentUpdateView(PaymentPermissionMixin, PermissionRequiredMixin, SelectR
                         UserFormKwargsMixin, FormValidMessageMixin,
                         UpdateView):
     model = Payment
-    select_related = ['user']
+    select_related = ['cashier', 'order', 'order__trip__location__country']
     form_class = PaymentForm
     permission_required = 'payments.change_payment'
-
-    # User can edit own payment always
-    def has_permission(self, *args, **kwargs):
-        if self.get_object().user != self.request.user:
-            return super(PaymentUpdateView, self).has_permission(*args, **kwargs)
-        return True
 
     def get_form_valid_message(self):
         return _("{0} updated!").format(self.object)
 
     def get_success_url(self, *args, **kwargs):
         return self.object.order.get_absolute_url()
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(PaymentUpdateView, self).get_context_data(*args, **kwargs)
+        context['order'] = self.object.order
+        return context
 
 
 class PaymentDeleteView(PaymentPermissionMixin, PermissionRequiredMixin, DeleteMessageMixin,

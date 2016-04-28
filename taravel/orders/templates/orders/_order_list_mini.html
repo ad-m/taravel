@@ -3,6 +3,9 @@
     <tr>
         <th>{% trans 'Order' %}</th>
         <th>{% trans 'Created' %}</th>
+        {% if show_value %}
+        <th>{% trans 'Value' %}</th>
+        {% endif %}
         <th>{% trans 'Paid' %}</th>
         <th>{% trans 'Action' %}</th>
     </tr>
@@ -10,6 +13,9 @@
     <tr>
         <td>{{object}}</td>
         <td>{{object.created}}</td>
+        {% if show_value %}
+        <th>{{ object.total_value }}</th>
+        {% endif %}
         <td>{% include 'payments/_payment_badge.html' with status=object.is_paid %}</td>
         <td>
             <a href="{{object.get_absolute_url}}" class="btn btn-primary btn-sm">{% trans 'Details' %}</a>

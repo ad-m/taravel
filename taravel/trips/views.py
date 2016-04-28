@@ -36,7 +36,11 @@ class TripDetailView(SelectRelatedMixin, DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(TripDetailView, self).get_context_data(**kwargs)
-        context['order_list'] = Order.objects.filter(user=self.request.user, trip=self.object).all()
+        if self.request.user.is_authenticated():
+            context['order_list'] = (Order.objects.filter(user=self.request.user,
+                                                          trip=self.object).
+                                     with_total_value().
+                                     all())
         return context
 
 

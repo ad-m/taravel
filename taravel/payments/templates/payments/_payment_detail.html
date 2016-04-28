@@ -1,7 +1,15 @@
 {% load i18n %}
 <div class="well">
       <h4>{% trans 'Payment details '%}</h4>
+      {% if object.cashier %}
       <p>{% trans 'Cashier' %}: {{object.cashier}} </p>
+      {% endif %}
       <p>{% trans 'Form' %}: {{object.form}} </p>
       <p>{% trans 'Time' %}: {{object.created}} </p>
+      {% if perms.payments.change_payment %}
+      <a href="{{object.get_update_url}}" class="btn btn-primary">{% trans 'Update' %}</a>
+      {% endif %}
+      {% if perms.payments.delete_payment %}
+      <a href="{{object.get_delete_url}}" class="btn btn-primary">{% trans 'Cancel' %}</a>
+      {% endif %}
 </div>

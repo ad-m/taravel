@@ -5,7 +5,6 @@ from django.core.urlresolvers import reverse
 from django.conf import settings
 from django.utils.encoding import python_2_unicode_compatible
 from ..orders.models import Order
-from django.utils.encoding import force_text
 
 
 @python_2_unicode_compatible
@@ -34,7 +33,10 @@ class Payment(models.Model):
         ordering = ['created', ]
 
     def __str__(self):
-        return force_text(self.pk)
+        return _("Payment #%d") % (self.pk or 0, )
 
-    def get_absolute_url(self):
-        return reverse('payments:details', kwargs={'slug': self.slug})
+    def get_update_url(self):
+        return reverse('payments:update', kwargs={'pk': str(self.pk)})
+
+    def get_delete_url(self):
+        return reverse('payments:delete', kwargs={'pk': str(self.pk)})

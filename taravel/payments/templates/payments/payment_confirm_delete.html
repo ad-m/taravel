@@ -1,0 +1,13 @@
+{% extends 'payments/payment_base.html' %}
+{% load i18n %}
+{% block content %}
+<ol class="breadcrumb">
+  <li><a href="{{object.order.trip.location.country.get_absolute_url}}">{{object.order.trip.location.country}}</a></li>
+  <li><a href="{{object.order.trip.location.get_absolute_url}}">{{object.order.trip.location}}</a></li>
+  <li><a href="{{object.order.trip.get_absolute_url}}">{{object.order.trip}}</a></li>
+  <li><a href="{{object.order.get_absolute_url}}">{{object.order}}</a></li>
+  <li class="active">{% trans 'Cancel payment' %}</li>
+</ol>
+{% include '_confirm_delete.html' with object=object %}
+{% endblock %}
+

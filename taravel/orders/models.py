@@ -9,8 +9,11 @@ from taravel.addresses.models import Address
 
 
 class OrderQuerySet(models.QuerySet):
+    def with_guest_count(self):
+        return self.annotate(guest_count=models.Count('guest'))
+
     def with_total_value(self):
-        return self.annotate(value=models.Sum('guest__value'))
+        return self.annotate(total_value=models.Count('guest') * models.F('unit_price'))
 
 
 @python_2_unicode_compatible
@@ -20,6 +23,8 @@ class Order(models.Model):
     address = models.ForeignKey(to=Address, verbose_name=_("Billing address"))
     created = models.DateTimeField(verbose_name=_("Creation date"), auto_now_add=True)
     note = models.TextField(blank=True)
+    unit_price = models.IntegerField(verbose_name=_("Unit price"),
+                                     help_text=_("Participation value of each guest"))
     objects = OrderQuerySet.as_manager()
 
     def is_paid(self):

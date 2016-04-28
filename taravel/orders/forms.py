@@ -16,6 +16,7 @@ class OrderForm(UserKwargModelFormMixin, forms.ModelForm):
 
         if trip:
             self.instance.trip = trip
+            self.instance.unit_price = trip.base_price
         if self.user:
             self.instance.user = self.user
 

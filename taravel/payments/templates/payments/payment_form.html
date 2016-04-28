@@ -2,6 +2,20 @@
 {% load crispy_forms_tags i18n %}
 
 {% block content %}
+{% if order %}
+<ol class="breadcrumb">
+  <li><a href="{{order.trip.location.country.get_absolute_url}}">{{order.trip.location.country}}</a></li>
+  <li><a href="{{order.trip.location.get_absolute_url}}">{{order.trip.location}}</a></li>
+  <li><a href="{{order.trip.get_absolute_url}}">{{order.trip}}</a></li>
+  <li><a href="{{order.get_absolute_url}}">{{order}}</a></li>
+  {% if object %}
+  <li class="active">{% trans 'Update payment' %}</li>
+  {% else %}
+  <li class="active">{% trans 'Add payment' %}</li>
+  {% endif %}
+</ol>
+{% endif %}
+
 <form method="POST" class="form-horizontal">    
 {{ form | crispy }}
 <div style="display:none">

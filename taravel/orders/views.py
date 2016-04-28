@@ -40,8 +40,13 @@ class OrderFilterView(FilterView):
 
 class OrderDetailView(SelectRelatedMixin, PrefetchRelatedMixin, DetailView):
     model = Order
-    select_related = ['user', 'trip']
+    select_related = ['user', 'trip', 'payment']
     prefetch_related = ['guest_set', ]
+
+    def get_queryset(self, *args, **kwargs):
+        qs = super(OrderDetailView, self).get_queryset(*args, **kwargs)
+        qs = qs.with_total_value()
+        return qs
 
 
 class GuestInline(InlineFormSet):

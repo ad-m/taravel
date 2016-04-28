@@ -26,20 +26,18 @@
 <p>{% trans 'Payment' %}: {% include 'payments/_payment_badge.html' with status=object.is_paid %}</p>
 {% endif %}
 
-<p>User: <a href="{{object.user.get_absolute_url}}">{{object.user}}</a></p>
+<p>{% trans 'Value' %}: {{ object.total_value }}</p>
 
 {% if object.guest_set.all %}
 <table class="table table-striped">
     <tr>
         <th>{% trans 'Guest' %}</th>
-        <th>{% trans 'Child' %}</th>
-        <th>{% trans 'Value' %}</th>
+        <th>{% trans 'Governement ID' %}</th>
     </tr>
 {% for object in object.guest_set.all %}
     <tr>
         <td>{{object}}</td>
-        <td>{{object.child | yesno:'yes,no'}} </td>
-        <td>{{object.value}}</td>
+        <td>{{object.government_id}}</td>
     </tr>
 {% endfor %}
 </table>

@@ -2,7 +2,7 @@ from atom.ext.crispy_forms.forms import BaseTableFormSet
 from atom.views import DeleteMessageMixin
 from braces.views import FormValidMessageMixin, PrefetchRelatedMixin, SelectRelatedMixin, UserFormKwargsMixin
 from cached_property import cached_property
-from django.contrib.auth.mixins import PermissionRequiredMixin
+from django.contrib.auth.mixins import PermissionRequiredMixin, LoginRequiredMixin
 from django.core.urlresolvers import reverse_lazy
 from django.shortcuts import get_object_or_404
 from django.utils.translation import ugettext_lazy as _
@@ -55,7 +55,8 @@ class GuestInline(InlineFormSet):
         return kw
 
 
-class OrderCreateView(NamedFormsetsMixin, UserFormKwargsMixin, CreateWithInlinesView):
+class OrderCreateView(NamedFormsetsMixin, LoginRequiredMixin, UserFormKwargsMixin,
+                      CreateWithInlinesView):
     model = Order
     form_class = OrderForm
     inlines = [GuestInline]

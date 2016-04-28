@@ -17,6 +17,4 @@ urlpatterns = [
         name="update"),
     url(r'^order-(?P<pk>\d+)/~delete$', views.OrderDeleteView.as_view(),
         name="delete"),
-    url(r'^order-(?P<pk>\d+)/~paid$', views.OrderPaidView.as_view(),
-        name="paid"),
 ]

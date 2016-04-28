@@ -14,4 +14,4 @@ class TripForm(UserKwargModelFormMixin, SingleButtonMixin, forms.ModelForm):
 
     class Meta:
         model = Trip
-        fields = ['name', 'location', 'base_price', 'space', 'main_image']
+        fields = ['name', 'location', 'description', 'base_price', 'space', 'main_image']

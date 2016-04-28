@@ -1,10 +1,11 @@
 {% extends 'locations/location_base.html' %}
 {% load i18n crispy_forms_tags %}
 {% block content %}
-
+<div class="buttons">
 {% if perms.locations.add_country %}
 <a href="{% url 'locations:create_country' %}" class="btn btn-info">{% trans 'Add country' %}</a>
 {% endif %}
+</div>
 
 {% crispy form %}
 {% endblock %}

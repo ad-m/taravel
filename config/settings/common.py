@@ -32,7 +32,7 @@ DJANGO_APPS = (
     # 'django.contrib.humanize',
 
     # Admin
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     'django.contrib.gis'
 )
 THIRD_PARTY_APPS = (
@@ -51,6 +51,7 @@ LOCAL_APPS = (
     'taravel.orders',
     'taravel.locations',
     'taravel.addresses',
+    'taravel.payments',
     # Your stuff: custom apps go here
 )
 
@@ -238,3 +239,4 @@ ADMIN_URL = r'^admin/'
 
 # Your common stuff: Below this line define 3rd party library settings
 CHILD_DISCOUNT = 5
+FILTERS_HELP_TEXT_FILTER = False

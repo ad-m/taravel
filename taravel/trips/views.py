@@ -1,16 +1,18 @@
 from atom.ext.crispy_forms.forms import BaseTableFormSet
 from atom.views import DeleteMessageMixin
-from braces.views import FormValidMessageMixin, SelectRelatedMixin, UserFormKwargsMixin
+from braces.views import FormValidMessageMixin, SelectRelatedMixin, UserFormKwargsMixin, PrefetchRelatedMixin
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.urlresolvers import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
-from django.views.generic import CreateView, DeleteView, DetailView, UpdateView
+from django.views.generic import DeleteView, DetailView
 from django_filters.views import FilterView
-from extra_views import CreateWithInlinesView, InlineFormSet, NamedFormsetsMixin, UpdateWithInlinesView
+from extra_views import (CreateWithInlinesView, InlineFormSet, NamedFormsetsMixin,
+                         UpdateWithInlinesView)
 
 from .filters import TripFilter
 from .forms import TripForm
 from .models import Trip, Image
+from ..orders.models import Order
 
 
 class TripListView(FilterView):
@@ -32,8 +34,13 @@ class TripDetailView(SelectRelatedMixin, DetailView):
             self.select_related.append('created_by')
         return super(TripDetailView, self).dispatch(request, *args, **kwargs)
 
+    def get_context_data(self, **kwargs):
+        context = super(TripDetailView, self).get_context_data(**kwargs)
+        context['order_list'] = Order.objects.filter(user=self.request.user, trip=self.object).all()
+        return context
 
-class ImageInline(InlineFormSet):  # TODO: Calculate value
+
+class ImageInline(InlineFormSet):
     model = Image
     formset_class = BaseTableFormSet
 

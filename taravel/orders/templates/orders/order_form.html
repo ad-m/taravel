@@ -7,11 +7,30 @@
 $(function() {
         $('#form-guest tr').formset({
             prefix: '{{ guest.prefix }}',
+            deleteText: '{% trans "remove" %}',
+            addText: '{% trans "add another guest" %}',
         });
 });
 </script>
 {% endblock %}
 {% block content %}
+{% if trip %}
+<ol class="breadcrumb">
+  <li><a href="{{trip.location.country.get_absolute_url}}">{{trip.location.country}}</a></li>
+  <li><a href="{{trip.location.get_absolute_url}}">{{trip.location}}</a></li>
+  <li><a href="{{trip.trip.location.get_absolute_url}}">{{trip}}</a></li>
+  <li class="active">{% trans 'Add order' %}</li>
+</ol>
+{% endif %}
+{% if order %}
+<ol class="breadcrumb">
+  <li><a href="{{order.trip.location.country.get_absolute_url}}">{{order.trip.location.country}}</a></li>
+  <li><a href="{{order.trip.location.get_absolute_url}}">{{order.trip.location}}</a></li>
+  <li><a href="{{order.trip.get_absolute_url}}">{{order.trip}}</a></li>
+  <li><a href="{{order.get_absolute_url}}">{{order}}</a></li>
+  <li class="active">{% trans 'Update order' %}</li>
+</ol>
+{% endif %}
 <form method="POST" class="form-horizontal">
 {{ form | crispy }}
 <h2>{% trans 'Guest' %}</h2>

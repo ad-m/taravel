@@ -1,0 +1,13 @@
+{% extends 'payments/payment_base.html' %}
+{% load crispy_forms_tags i18n %}
+
+{% block content %}
+<form method="POST" class="form-horizontal">    
+{{ form | crispy }}
+<div style="display:none">
+    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+</div>
+<input type="submit" class="btn btn-primary" value="{% trans 'Register payment' %}">
+</form>
+
+{% endblock %}

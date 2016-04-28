@@ -54,4 +54,37 @@ html, body, .content{
 }
 .buttons {
   padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.well {
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  background-color: #eceeef;
+  border-radius: 0.25rem;
+}
+
+.well .side img {
+  width: 100%;
+}
+
+.payment-status {
+  color: rgb(255, 255, 255);
+  border-radius: 2em;
+  margin: 5px;
+  padding: 0px 10px;
+}
+.payment-fail {
+  background-color: rgb(255, 0, 0);
+}
+
+.payment-success {
+  background-color: rgb(0, 255, 0);
+}
+
+.breadcrumb li {
+    float: left; 
+}
+.breadcrumb li a:after:; { 
+  content: " / "; 
 }

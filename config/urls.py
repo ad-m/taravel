@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.static import static
-# django.contrib import admin
+from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
 
@@ -13,7 +13,7 @@ urlpatterns = [
     url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'), name="about"),
 
     # Django Admin, use {% url 'admin:index' %}
-    # url(settings.ADMIN_URL, include(admin.site.urls)),
+    url(settings.ADMIN_URL, include(admin.site.urls)),
 
     # User management
     url(r'^users/', include("taravel.users.urls", namespace="users")),
@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^locations/', include("taravel.locations.urls", namespace="locations")),
     url(r'^orders/', include("taravel.orders.urls", namespace="orders")),
     url(r'^addresses/', include("taravel.addresses.urls", namespace="addresses")),
+    url(r'^payments/', include("taravel.payments.urls", namespace="payments")),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

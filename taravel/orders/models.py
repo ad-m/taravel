@@ -19,19 +19,16 @@ class Order(models.Model):
     trip = models.ForeignKey(to=Trip, verbose_name=_("Trip"))
     address = models.ForeignKey(to=Address, verbose_name=_("Billing address"))
     created = models.DateTimeField(verbose_name=_("Creation date"), auto_now_add=True)
-    paid = models.DateField(verbose_name=_("Date of payment"), blank=True, null=True)
     note = models.TextField(blank=True)
     objects = OrderQuerySet.as_manager()
 
     def is_paid(self):
-        return bool(self.paid)
+        return bool(self.payment)
 
     class Meta:
         verbose_name = _("Order")
         verbose_name_plural = _("Orders")
-        permissions = (("mark_paid_order", "Can mark paid order"),
-                       ("view_order", "Can view order"),
-                       )
+        permissions = (("view_order", "Can view order"), )
 
     def __str__(self):
         return _("Order #%d") % (self.pk, )

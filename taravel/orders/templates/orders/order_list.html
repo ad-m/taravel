@@ -5,28 +5,13 @@
   <li class="active">{% trans 'Orders' %}</li>
 </ol>
 {% if perms.orders.view_orders %}
-<a href="{% url 'orders:full_list' %}" class="btn btn-info">{% trans 'View all orders' %}</a>
+<div class="buttons">
+    <a href="{% url 'orders:full_list' %}" class="btn btn-info">{% trans 'View all orders' %}</a>
+</div>
 {% endif %}
 
 {% if object_list %}
-<table class="table table-striped">
-    <tr>
-        <th>{% trans 'Order' %}</th>
-        <th>{% trans 'Created' %}</th>
-        <th>{% trans 'Paid' %}</th>
-        <th>{% trans 'Action' %}</th>
-    </tr>
-{% for object in object_list %}
-    <tr>
-        <td>{{object}}</td>
-        <td>{{object.created}}</td>
-        <td>{% include 'orders/_paid_badge.html' with object=object %}</td>
-        <td>
-        <a href="{{object.get_absolute_url}}" class="btn btn-primary btn-sm">{% trans 'Details' %}</a>
-        </td>
-    </tr>
-{% endfor %}
-</table>
+{% include 'orders/_order_list_mini.html' with object_list=object_list %}
 {% endif %}
 
 {% endblock %}

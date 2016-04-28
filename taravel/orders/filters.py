@@ -14,4 +14,4 @@ class OrderFilter(CrispyFilterMixin, FilterSet):
 
     class Meta:
         model = Order
-        fields = ['paid', 'user']
+        fields = ['user']

@@ -1,0 +1,4 @@
+{% load i18n %}
+{% if status %}<span class="payment-status payment-success">{% trans 'Paid' %}
+{% else %}<span class="payment-status payment-fail">{% trans 'Unpaid' %}
+{% endif %}</span>

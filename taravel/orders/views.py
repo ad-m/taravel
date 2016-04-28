@@ -1,18 +1,19 @@
 from atom.ext.crispy_forms.forms import BaseTableFormSet
-from atom.views import ActionMessageMixin, ActionView, DeleteMessageMixin
-from braces.views import FormValidMessageMixin, SelectRelatedMixin, UserFormKwargsMixin
+from atom.views import DeleteMessageMixin
+from braces.views import FormValidMessageMixin, PrefetchRelatedMixin, SelectRelatedMixin, UserFormKwargsMixin
+from cached_property import cached_property
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.urlresolvers import reverse_lazy
 from django.shortcuts import get_object_or_404
 from django.utils.translation import ugettext_lazy as _
-from django.views.generic import DeleteView, DetailView, ListView, UpdateView
+from django.views.generic import DeleteView, DetailView, ListView
 from django_filters.views import FilterView
 from extra_views import CreateWithInlinesView, InlineFormSet, NamedFormsetsMixin, UpdateWithInlinesView
 
 from ..guests.models import Guest
 from ..trips.models import Trip
 from .filters import OrderFilter
-from .forms import OrderForm, OrderPaidForm
+from .forms import OrderForm
 from .models import Order
 
 
@@ -37,14 +38,21 @@ class OrderFilterView(FilterView):
         return qs
 
 
-class OrderDetailView(SelectRelatedMixin, DetailView):
+class OrderDetailView(SelectRelatedMixin, PrefetchRelatedMixin, DetailView):
     model = Order
     select_related = ['user', 'trip']
+    prefetch_related = ['guest_set', ]
 
 
 class GuestInline(InlineFormSet):  # TODO: Calculate value
     model = Guest
     formset_class = BaseTableFormSet
+
+    def get_factory_kwargs(self, *args, **kwargs):
+        kw = super(GuestInline, self).get_factory_kwargs(*args, **kwargs)
+        kw['min_num'] = 1
+        kw['validate_min'] = True
+        return kw
 
 
 class OrderCreateView(NamedFormsetsMixin, UserFormKwargsMixin, CreateWithInlinesView):
@@ -53,20 +61,31 @@ class OrderCreateView(NamedFormsetsMixin, UserFormKwargsMixin, CreateWithInlines
     inlines = [GuestInline]
     inlines_names = ['guest']
 
+    @cached_property
+    def trip(self):
+        return get_object_or_404(Trip.objects.select_related('location', 'location__country'),
+                                 slug=self.kwargs['trip_slug'])
+
     def get_form_kwargs(self, *args, **kwargs):
         kw = super(OrderCreateView, self).get_form_kwargs(*args, **kwargs)
-        kw['trip'] = get_object_or_404(Trip, slug=self.kwargs['trip_slug'])
+        kw['trip'] = self.trip
         return kw
+
+    def get_context_data(self, **kwargs):
+        context = super(OrderCreateView, self).get_context_data(**kwargs)
+        context['trip'] = self.trip
+        return context
 
     def get_success_url(self):
         return self.object.get_absolute_url()
 
 
-class OrderUpdateView(NamedFormsetsMixin, UserFormKwargsMixin, FormValidMessageMixin,
-                      UpdateWithInlinesView):
+class OrderUpdateView(NamedFormsetsMixin, SelectRelatedMixin, UserFormKwargsMixin,
+                      FormValidMessageMixin, UpdateWithInlinesView):
     model = Order
     form_class = OrderForm
     permission_required = 'orders.change_order'
+    select_related = ['trip__location__country', 'user']
     inlines = [GuestInline]
     inlines_names = ['guest']
 
@@ -78,16 +97,6 @@ class OrderDeleteView(PermissionRequiredMixin, DeleteMessageMixin, DeleteView):
     model = Order
     success_url = reverse_lazy('trips:list')
     permission_required = 'orders.delete_order'
-
-    def get_success_message(self):
-        return _("{0} deleted!").format(self.object)
-
-
-class OrderPaidView(PermissionRequiredMixin, UpdateView):
-    template_name_suffix = '_paid'
-    model = Order
-    form_class = OrderPaidForm
-    permission_required = 'orders.mark_order_paid'
 
     def get_success_message(self):
         return _("{0} deleted!").format(self.object)

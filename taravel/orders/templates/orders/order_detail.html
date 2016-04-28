@@ -6,20 +6,27 @@
   <li class="active">{{object}}</li>
 </ol>
 
-{% if perms.orders.mark_paid_order and not order.is_paid %}
-    <a href="{% url 'orders:paid' pk=object.pk %}" class="btn btn-info">{% trans 'Mark paid' %}</a>
+{% if perms.payments.add_payment and not order.is_paid %}
+    <a href="{% url 'payments:create' order_pk=object.pk %}" class="btn btn-info">{% trans 'Register payment' %}</a>
 {% endif %}
 
 {% if perms.orders.change_order %}
     <a href="{% url 'orders:update' pk=object.pk %}" class="btn btn-info">{% trans 'Update order' %}</a>
 {% endif %}
 
-<p>Paid: {% include 'orders/_paid_badge.html' with object=object %}</p>
-<p>Trip: <a href="{{object.trip.get_absolute_url}}">{{object.trip}}</a></p>
-<p>User: <a href="{{object.user.get_absolute_url}}">{{object.user}}</a></p>
-{% for quest in object.quest_set.all %}
+{% include 'trips/_trip_mini.html' with object=object.trip %}
 
-{% endfor %}
+{% if object.is_paid %}
+{% if user.is_staff %}
+{% include 'payments/_payment_detail.html' with object=object.payment %}
+{% else %}
+{% include 'payments/_payment_mini.html' with object=object.payment %}
+{% endif %}
+{% else %}
+<p>{% trans 'Payment' %}: {% include 'payments/_payment_badge.html' with status=object.is_paid %}</p>
+{% endif %}
+
+<p>User: <a href="{{object.user.get_absolute_url}}">{{object.user}}</a></p>
 
 {% if object.guest_set.all %}
 <table class="table table-striped">

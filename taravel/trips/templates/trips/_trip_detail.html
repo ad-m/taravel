@@ -1,0 +1,17 @@
+{% load i18n %}
+<div class="well">
+  <div class="row">
+    <div class="col-sm-4 side">
+      <img src="{{object.main_image.thumbnail.318x200}}" width="100%">
+    </div>
+    <div class="col-sm-8">
+      <h4>{{object}}</h4>
+      {{object.description | safe }}
+      {% if user.is_staff %}
+      <p>{% blocktrans with user=object.created_by user_link=object.created_by.get_absolute_url %}Created by <a href="{{user_link}}">{{user}}</a>.{% endblocktrans %}
+      {% endif %}
+      </p>
+      <a href="{% url 'orders:create' trip_slug=object.slug %}" class="btn btn-primary">{% trans 'Order trip now' %}</a>
+    </div>
+  </div>
+</div>

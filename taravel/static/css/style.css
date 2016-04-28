@@ -2206,4 +2206,32 @@ html, body, .content {
   height: 100%; }
 
 .buttons {
-  padding-top: 10px; }
+  padding-top: 10px;
+  padding-bottom: 10px; }
+
+.well {
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  background-color: #eceeef;
+  border-radius: 0.25rem; }
+
+.well .side img {
+  width: 100%; }
+
+.payment-status {
+  color: white;
+  border-radius: 2em;
+  margin: 5px;
+  padding: 0px 10px; }
+
+.payment-fail {
+  background-color: red; }
+
+.payment-success {
+  background-color: lime; }
+
+.breadcrumb li {
+  float: left; }
+
+.breadcrumb li a:after {
+  content: " / "; }

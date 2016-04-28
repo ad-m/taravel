@@ -11,7 +11,19 @@ from taravel.locations.models import Location
 
 
 class TripQuerySet(models.QuerySet):
-    pass
+    def with_guest_count(self):
+        return self.annotate(guest_count=models.Count('order__guest')).all()
+
+    def free(self):
+        return self.with_guest_count().filter(space__lt=models.F('guest_count')).all()
+
+    def full(self):
+        return self.with_guest_count().qs.filter(space__gt=models.F('guest_count')).all()
+
+    def with_free_count(self):
+        expr = models.ExpressionWrapper(expression=models.F('space')-models.F('guest_count'),
+                                        output_field=models.IntegerField())
+        return self.with_guest_count().annotate(free_count=expr)
 
 
 @python_2_unicode_compatible

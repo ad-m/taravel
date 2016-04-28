@@ -1,29 +1,35 @@
 {% extends 'trips/trip_base.html' %}
 {% load i18n crispy_forms_tags %}
 {% block content %}
+<div class="buttons">
   {% if perms.trips.change_trip %}
     <a href="{% url 'trips:update' slug=object.slug %}" class="btn btn-info">{% trans 'Change trip' %}</a>
   {% endif %}
   {% if perms.trips.delete_trip %}
     <a href="{% url 'trips:delete' slug=object.slug %}" class="btn btn-info">{% trans 'Remove trip' %}</a>
   {% endif %}
-
+</div>
 <ol class="breadcrumb">
   <li><a href="{{object.location.country.get_absolute_url}}">{{object.location.country}}</a></li>
   <li><a href="{{object.location.get_absolute_url}}">{{object.location}}</a></li>
   <li class="active">{{object}}</li>
 </ol>
 
-  <div class="card">
-    <img class="card-img-top" src="{{object.main_image.thumbnail.318x200}}">
-    <div class="card-block">
-      <h4 class="card-title">{{object}}</h4>
-      <p class="card-text">{{object.description}}</p>
-      {% if request.user.is_staff %}
-        <p class="card-text">{% trans 'Created by' %} {{object.created_by}}</p>
-      {% endif %}
-    </div>
-  </div>
+{% include 'trips/_trip_detail.html' with object=object %}
 
-<a href="{% url 'orders:create' trip_slug=object.slug %}" class="btn btn-primary">{% trans 'Order trip now' %}</a>
+{% if object.image_set.all %}
+<div class="well">
+<h2>{% trans 'Galleries' %}</h2>
+{% for img in object.image_set.all %}
+<a href="{{img.file.url}}"><img src="{{img.file.thumbnail.318x200}}"></a>
+{% endfor %}
+</div>
+{% endif %}
+
+{% if order_list %}
+<div class="well">
+<h2>{% trans 'Your orders of the trip' %}</h2>
+{% include 'orders/_order_list_mini.html' with object_list=order_list %}
+</div>
+{% endif %}
 {% endblock %}

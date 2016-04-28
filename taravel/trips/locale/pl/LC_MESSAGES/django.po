@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-09 15:58+0000\n"
-"PO-Revision-Date: 2016-04-09 16:46+0200\n"
+"POT-Creation-Date: 2016-04-27 23:04+0000\n"
+"PO-Revision-Date: 2016-04-28 01:04+0200\n"
 "Last-Translator: Adam Dobrawy <naczelnik@jawnosc.tk>\n"
 "Language-Team: \n"
 "Language: pl\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
 #: filters.py:19 filters.py:21
 msgid "Price (ascending)"
@@ -63,7 +63,7 @@ msgstr "Miejsca"
 msgid "The maximum number of guests"
 msgstr "Maksymalna liczba gości"
 
-#: models.py:28 models.py:47 models.py:53 templates/trips/trip_form.html.py:27
+#: models.py:28 models.py:47 models.py:53
 msgid "Image"
 msgstr "Obraz"
 
@@ -89,29 +89,41 @@ msgstr "Usuń wycieczkę"
 
 #: templates/trips/trip_detail.html:23
 msgid "Created by"
-msgstr ""
+msgstr "Utworzone przez"
 
 #: templates/trips/trip_detail.html:28
 msgid "Order trip now"
 msgstr "Zamów wycieczkę teraz"
 
-#: templates/trips/trip_filter.html:5
+#: templates/trips/trip_filter.html:9
 msgid "Add trip"
 msgstr "Dodaj wycieczkę"
 
-#: templates/trips/trip_filter.html:17
+#: templates/trips/trip_filter.html:19
 msgid "Details"
 msgstr "Szczegóły"
 
-#: templates/trips/trip_form.html:16
+#: templates/trips/trip_form.html:10
+msgid "remove"
+msgstr "usuń"
+
+#: templates/trips/trip_form.html:11
+msgid "add another image"
+msgstr "dodaj kolejne zdjęcie"
+
+#: templates/trips/trip_form.html:20
 msgid "Add location"
 msgstr "Dodaj miejsce"
 
-#: templates/trips/trip_form.html:20
+#: templates/trips/trip_form.html:24
 msgid "Add country"
 msgstr "Dodaj kraj"
 
-#: templates/trips/trip_form.html:33
+#: templates/trips/trip_form.html:31
+msgid "Gallery"
+msgstr "Galeria"
+
+#: templates/trips/trip_form.html:36
 msgid "Save"
 msgstr "Zapisz"
 

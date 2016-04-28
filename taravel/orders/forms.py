@@ -19,12 +19,9 @@ class OrderForm(UserKwargModelFormMixin, forms.ModelForm):
         if self.user:
             self.instance.user = self.user
 
-        if not self.user.has_perm('orders.mar_paid_order'):
-            del self.fields['paid']
-
     class Meta:
         model = Order
-        fields = ['note', 'address', 'paid']
+        fields = ['note', 'address']
 
 
 class OrderPaidForm(UserKwargModelFormMixin, forms.ModelForm):

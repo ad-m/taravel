@@ -3,6 +3,7 @@ from atom.ext.crispy_forms.forms import SingleButtonMixin
 from django import forms
 from .models import Trip
 from braces.forms import UserKwargModelFormMixin
+from tinymce.widgets import TinyMCE
 
 
 class TripForm(UserKwargModelFormMixin, SingleButtonMixin, forms.ModelForm):
@@ -15,3 +16,6 @@ class TripForm(UserKwargModelFormMixin, SingleButtonMixin, forms.ModelForm):
     class Meta:
         model = Trip
         fields = ['name', 'location', 'description', 'base_price', 'space', 'main_image']
+        widgets = {
+                'description': TinyMCE(),
+        }

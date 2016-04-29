@@ -38,7 +38,7 @@ redis>=2.10.0
 
 
 # Your custom requirements go here
-django-bleach==0.3.0
+https://bitbucket.org/ad_m/django-bleach/get/4576f3309920.zip
 django-versatileimagefield==1.4
 https://github.com/ad-m/django-atom/archive/v0.11.0.zip
 django_filter==0.13.0

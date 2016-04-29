@@ -40,7 +40,8 @@ THIRD_PARTY_APPS = (
     'allauth',  # registration
     'allauth.account',  # registration
     # 'allauth.socialaccount',  # registration
-    'versatileimagefield'
+    'versatileimagefield',
+    'tinymce'
 )
 
 # Apps specific for this project go here.
@@ -238,4 +239,10 @@ AUTOSLUG_SLUGIFY_FUNCTION = 'slugify.slugify'
 ADMIN_URL = r'^admin/'
 
 # Your common stuff: Below this line define 3rd party library settings
+
+# django-filters
 FILTERS_HELP_TEXT_FILTER = False
+
+# django-bleach
+
+BLEACH_DEFAULT_WIDGET = 'tinymce.widgets.TinyMCE'

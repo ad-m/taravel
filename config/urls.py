@@ -25,7 +25,7 @@ urlpatterns = [
     url(r'^orders/', include("taravel.orders.urls", namespace="orders")),
     url(r'^addresses/', include("taravel.addresses.urls", namespace="addresses")),
     url(r'^payments/', include("taravel.payments.urls", namespace="payments")),
-
+    url(r'^tinymce/', include('tinymce.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

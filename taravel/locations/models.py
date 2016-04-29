@@ -43,7 +43,7 @@ class Location(models.Model):
     country = models.ForeignKey(to=Country, verbose_name=_("Country"))
     name = models.CharField(verbose_name=_("Name"), max_length=50)
     slug = AutoSlugField(populate_from='name', verbose_name=_("Slug"), unique=True)
-    position = models.PointField(verbose_name=_("Position"), null=True)
+    position = models.PointField(verbose_name=_("Position"), srid=4326, null=True)
     objects = LocationQuerySet.as_manager()
 
     class Meta:

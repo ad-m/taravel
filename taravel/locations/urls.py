@@ -5,6 +5,8 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
+    url(r'^$', views.LocationMapView.as_view()),
+    url(r'^location.json$', views.LocationMapLayer.as_view()),
     url(r'^~create$', views.LocationCreateView.as_view(),
         name="create"),
     url(r'^location-(?P<pk>\w+)/~update$', views.LocationUpdateView.as_view(),

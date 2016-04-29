@@ -1,5 +1,7 @@
 from django.contrib import admin
-from .models import Location, Country
+from leaflet.admin import LeafletGeoAdmin
+
+from .models import Country, Location
 
 
 class LocationInline(admin.TabularInline):
@@ -21,8 +23,8 @@ class CountryAdmin(admin.ModelAdmin):
 admin.site.register(Country, CountryAdmin)
 
 
-class LocationAdmin(admin.ModelAdmin):
-    list_display = ('name', 'country',)
+class LocationAdmin(LeafletGeoAdmin):
+    list_display = ('name', 'country', 'position')
     list_filter = ('country', 'country__continent')
     search_fields = ('name',)
 admin.site.register(Location, LocationAdmin)

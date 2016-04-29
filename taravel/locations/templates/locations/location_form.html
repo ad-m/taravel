@@ -1,5 +1,6 @@
 {% extends 'locations/location_base.html' %}
-{% load i18n crispy_forms_tags %}
+{% load i18n crispy_forms_tags leaflet_tags %}
+
 {% block content %}
 <div class="buttons">
 {% if perms.locations.add_country %}
@@ -8,4 +9,14 @@
 </div>
 
 {% crispy form %}
+{% endblock %}
+
+{% block javascript %}
+{% leaflet_js %}
+{{form.media}}
+{{block.super}}
+{% endblock %}
+{% block css %}
+{{block.super}}
+r{% leaflet_css %}
 {% endblock %}

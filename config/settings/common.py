@@ -41,7 +41,9 @@ THIRD_PARTY_APPS = (
     'allauth.account',  # registration
     # 'allauth.socialaccount',  # registration
     'versatileimagefield',
-    'tinymce'
+    'tinymce',
+    'leaflet',
+    'djgeojson',
 )
 
 # Apps specific for this project go here.
@@ -266,3 +268,14 @@ BLEACH_ALLOWED_TAGS = [
     'u',
     'div',
 ]
+
+LEAFLET_CONFIG = {
+    'DEFAULT_CENTER': (6.0, 45.0),
+    'DEFAULT_ZOOM': 16,
+    'MIN_ZOOM': 3,
+    'MAX_ZOOM': 18,
+    'TILES': [('OSM',
+               '//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+               '© <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors')]
+
+}

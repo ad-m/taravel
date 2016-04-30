@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-09 15:58+0000\n"
-"PO-Revision-Date: 2016-04-09 16:44+0200\n"
+"POT-Creation-Date: 2016-04-30 10:53+0000\n"
+"PO-Revision-Date: 2016-04-30 12:54+0200\n"
 "Last-Translator: Adam Dobrawy <naczelnik@jawnosc.tk>\n"
 "Language-Team: \n"
 "Language: pl\n"
@@ -17,107 +17,142 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
-#: models.py:18
+#: models.py:23
 msgid "User"
 msgstr "Użytkownik / użytkowniczka"
 
-#: models.py:19
+#: models.py:24
 msgid "Trip"
 msgstr "Wycieczka"
 
-#: models.py:20
+#: models.py:25
 msgid "Billing address"
 msgstr "Adres rozliczeniowy"
 
-#: models.py:21
+#: models.py:26
 msgid "Creation date"
 msgstr "Data utowrzenia"
 
-#: models.py:22
-msgid "Date of payment"
-msgstr "Data płatności"
+#: models.py:28
+msgid "Unit price"
+msgstr "Cena jednostkowa"
 
-#: models.py:30 templates/orders/order_filter.html.py:15
-#: templates/orders/order_list.html:14
+#: models.py:29
+msgid "Participation value of each guest"
+msgstr "Koszt udziału każdego gościa"
+
+#: models.py:36 templates/orders/_order_list_mini.html.py:4
+#: templates/orders/order_filter.html:15
 msgid "Order"
 msgstr "Zamówienie"
 
-#: models.py:31 templates/orders/order_detail.html.py:5
+#: models.py:37 templates/orders/order_detail.html.py:5
 #: templates/orders/order_filter.html:5 templates/orders/order_list.html:5
 msgid "Orders"
 msgstr "Zamówienia"
 
-#: models.py:37
+#: models.py:42
 #, python-format
 msgid "Order #%d"
 msgstr "Zamówienie #%d"
 
-#: templates/orders/_paid_badge.html:3
-msgid "Unpaid"
-msgstr "Nieopłacone"
+#: templates/orders/_order_list_mini.html:5
+#: templates/orders/order_filter.html:17
+msgid "Created"
+msgstr "Data utworzenia"
 
-#: templates/orders/order_detail.html:10 templates/orders/order_filter.html:32
-#: templates/orders/order_paid.html:10
-msgid "Mark paid"
-msgstr "Oznacz opłacenie"
-
-#: templates/orders/order_detail.html:14
-msgid "Update order"
-msgstr "Zaktualizuj zamówienie"
-
-#: templates/orders/order_detail.html:27 templates/orders/order_form.html:17
-msgid "Guest"
-msgstr "Gość"
-
-#: templates/orders/order_detail.html:28
-msgid "Child"
-msgstr "Dziecko"
-
+#: templates/orders/_order_list_mini.html:7
 #: templates/orders/order_detail.html:29 templates/orders/order_filter.html:16
 msgid "Value"
 msgstr "Wartośc"
 
-#: templates/orders/order_detail.html:40
-msgid "No guests."
-msgstr "Brak gości"
-
-#: templates/orders/order_filter.html:17 templates/orders/order_list.html:15
-msgid "Created"
-msgstr "Data utworzenia"
-
-#: templates/orders/order_filter.html:18 templates/orders/order_list.html:16
+#: templates/orders/_order_list_mini.html:9
+#: templates/orders/order_filter.html:18
 msgid "Paid"
 msgstr "Opłacony"
 
-#: templates/orders/order_filter.html:19 templates/orders/order_list.html:17
+#: templates/orders/_order_list_mini.html:10
+#: templates/orders/order_filter.html:19
 msgid "Action"
 msgstr "Akcja"
 
-#: templates/orders/order_filter.html:29 templates/orders/order_list.html:25
+#: templates/orders/_order_list_mini.html:21
+#: templates/orders/order_filter.html:29
 msgid "Details"
 msgstr "Szczegóły"
 
-#: templates/orders/order_form.html:23
+#: templates/orders/order_detail.html:10
+msgid "Register payment"
+msgstr "Zarejestruj płatność"
+
+#: templates/orders/order_detail.html:14 templates/orders/order_form.html:23
+msgid "Update order"
+msgstr "Zaktualizuj zamówienie"
+
+#: templates/orders/order_detail.html:26
+msgid "Payment"
+msgstr "Płatność"
+
+#: templates/orders/order_detail.html:32
+msgid "Guest list"
+msgstr "Lista gości"
+
+#: templates/orders/order_detail.html:35 templates/orders/order_form.html:36
+msgid "Guest"
+msgstr "Gość"
+
+#: templates/orders/order_detail.html:36
+msgid "Governement ID"
+msgstr "Identyfikator rządowy"
+
+#: templates/orders/order_detail.html:46
+msgid "No guests."
+msgstr "Brak gości"
+
+#: templates/orders/order_filter.html:32
+msgid "Add payment"
+msgstr "Dodaj płatność"
+
+#: templates/orders/order_form.html:10
+msgid "remove"
+msgstr "usuń"
+
+#: templates/orders/order_form.html:11
+msgid "add another guest"
+msgstr "dodaj kolejnego gościa"
+
+#: templates/orders/order_form.html:30
+msgid "Add order"
+msgstr "Dodaj zamówienie"
+
+#: templates/orders/order_form.html:42
 msgid "Order and pay"
 msgstr "Zamów i opłać"
 
-#: templates/orders/order_list.html:8
+#: templates/orders/order_list.html:9
 msgid "View all orders"
 msgstr "Zobacz wszystkie zamówienia"
 
-#: templates/orders/order_paid.html:5
-#, python-format
-msgid "Are you sure you want to mark \"%(object)s\" as paid?"
-msgstr "Czy jesteś pewien, że chcesz oznaczyć \"%(object)s\" jako opłacony?"
-
-#: views.py:74
+#: views.py:102
 #, python-brace-format
 msgid "{0} updated!"
 msgstr "{0} zaktualizowany!"
 
-#: views.py:83 views.py:93
+#: views.py:111
 #, python-brace-format
 msgid "{0} deleted!"
 msgstr "{0} usunięty!"
+
+#~ msgid "Unpaid"
+#~ msgstr "Nieopłacone"
+
+#~ msgid "Mark paid"
+#~ msgstr "Oznacz opłacenie"
+
+#~ msgid "Child"
+#~ msgstr "Dziecko"
+
+#~ msgid "Are you sure you want to mark \"%(object)s\" as paid?"
+#~ msgstr "Czy jesteś pewien, że chcesz oznaczyć \"%(object)s\" jako opłacony?"

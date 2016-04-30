@@ -1,0 +1,115 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-04-30 10:55+0000\n"
+"PO-Revision-Date: 2016-04-30 12:57+0200\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"Last-Translator: Adam Dobrawy <naczelnik@jawnosc.tk>\n"
+"Language-Team: \n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#: models.py:12
+msgid "Name"
+msgstr "Nazwa"
+
+#: models.py:24
+msgid "Order"
+msgstr "Zamówienie"
+
+#: models.py:26
+msgid "Form of payment"
+msgstr "Forma płatności"
+
+#: models.py:27
+msgid "Creation date"
+msgstr ""
+
+#: models.py:31
+msgid "Payment"
+msgstr "Płatność"
+
+#: models.py:32
+msgid "Payments"
+msgstr "Płatności"
+
+#: models.py:36
+#, python-format
+msgid "Payment #%d"
+msgstr "Płatność #%d"
+
+#: templates/payments/_payment_badge.html:2
+msgid "Paid"
+msgstr "Opłacone"
+
+#: templates/payments/_payment_badge.html:3
+msgid "Unpaid"
+msgstr "Nieopłacone"
+
+#: templates/payments/_payment_detail.html:3
+#: templates/payments/_payment_mini.html:3
+msgid "Payment details "
+msgstr "Szczegóły płatnośc"
+
+#: templates/payments/_payment_detail.html:5
+msgid "Cashier"
+msgstr "Kasjer"
+
+#: templates/payments/_payment_detail.html:7
+#: templates/payments/_payment_mini.html:4
+msgid "Form"
+msgstr "Forma"
+
+#: templates/payments/_payment_detail.html:8
+#: templates/payments/_payment_mini.html:5
+msgid "Time"
+msgstr "Czas"
+
+#: templates/payments/_payment_detail.html:10
+msgid "Update"
+msgstr "Zaktualizuj"
+
+#: templates/payments/_payment_detail.html:13
+msgid "Cancel"
+msgstr "Anuluj"
+
+#: templates/payments/payment_confirm_delete.html:9
+msgid "Cancel payment"
+msgstr "Anuluj płatność"
+
+#: templates/payments/payment_form.html:12
+msgid "Update payment"
+msgstr "Zaktualizuj płatność"
+
+#: templates/payments/payment_form.html:14
+msgid "Add payment"
+msgstr "Dodaj płatność"
+
+#: templates/payments/payment_form.html:24
+msgid "Register payment"
+msgstr "Zarejestruj płatność"
+
+#: views.py:52
+#, python-brace-format
+msgid "{0} created!"
+msgstr "{0} utworzony!"
+
+#: views.py:67
+#, python-brace-format
+msgid "{0} updated!"
+msgstr "{0} zaktualizowany!"
+
+#: views.py:85
+#, python-brace-format
+msgid "{0} deleted!"
+msgstr "{0} usunięty!"

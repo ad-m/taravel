@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-27 23:04+0000\n"
-"PO-Revision-Date: 2016-04-28 01:04+0200\n"
+"POT-Creation-Date: 2016-04-30 10:55+0000\n"
+"PO-Revision-Date: 2016-04-30 12:55+0200\n"
 "Last-Translator: Adam Dobrawy <naczelnik@jawnosc.tk>\n"
 "Language-Team: \n"
 "Language: pl\n"
@@ -35,73 +35,82 @@ msgstr "Kraj (rosnąco)"
 msgid "Country (descending)"
 msgstr "Kraj (malejąco)"
 
-#: models.py:19
+#: models.py:31
 msgid "Location"
 msgstr "Miejsce"
 
-#: models.py:20
+#: models.py:32
 msgid "Name"
 msgstr "Nazwa"
 
-#: models.py:21
+#: models.py:33
 msgid "Slug"
 msgstr "Identyfikator redakcyjny"
 
-#: models.py:23
+#: models.py:35
 msgid "Description of trip"
 msgstr "Opis wycieczki"
 
-#: models.py:24
+#: models.py:36
 msgid "Price"
 msgstr "Cena"
 
-#: models.py:25
+#: models.py:37
 msgid "Space"
 msgstr "Miejsca"
 
-#: models.py:27
+#: models.py:39
 msgid "The maximum number of guests"
 msgstr "Maksymalna liczba gości"
 
-#: models.py:28 models.py:47 models.py:53
+#: models.py:40 models.py:59 models.py:65
 msgid "Image"
 msgstr "Obraz"
 
-#: models.py:32 models.py:46
+#: models.py:44 models.py:58
 msgid "Trip"
 msgstr "Wycieczka"
 
-#: models.py:33
+#: models.py:45
 msgid "Trips"
 msgstr "Wycieczki"
 
-#: models.py:54
+#: models.py:66
 msgid "Images"
 msgstr "Obrazy"
 
-#: templates/trips/trip_detail.html:5
+#: templates/trips/_trip_detail.html:11
+#, python-format
+msgid "Created by <a href=\"%(user_link)s\">%(user)s</a>."
+msgstr "Utworzone przez <a href=\"%(user_link)s\">%(user)s</a>."
+
+#: templates/trips/_trip_detail.html:14
+msgid "Order trip now"
+msgstr "Zamów wycieczkę teraz"
+
+#: templates/trips/_trip_mini.html:10
+msgid "Details"
+msgstr "Szczegóły"
+
+#: templates/trips/trip_detail.html:6
 msgid "Change trip"
 msgstr "Edytuj wycieczkę"
 
-#: templates/trips/trip_detail.html:8
+#: templates/trips/trip_detail.html:9
 msgid "Remove trip"
 msgstr "Usuń wycieczkę"
 
-#: templates/trips/trip_detail.html:23
-msgid "Created by"
-msgstr "Utworzone przez"
+#: templates/trips/trip_detail.html:22
+msgid "Galleries"
+msgstr "Galeria"
 
-#: templates/trips/trip_detail.html:28
-msgid "Order trip now"
-msgstr "Zamów wycieczkę teraz"
+#: templates/trips/trip_detail.html:31
+msgid "Your orders of the trip"
+msgstr "Twoje zamówienia wycieczki"
 
 #: templates/trips/trip_filter.html:9
 msgid "Add trip"
 msgstr "Dodaj wycieczkę"
-
-#: templates/trips/trip_filter.html:19
-msgid "Details"
-msgstr "Szczegóły"
 
 #: templates/trips/trip_form.html:10
 msgid "remove"
@@ -127,12 +136,15 @@ msgstr "Galeria"
 msgid "Save"
 msgstr "Zapisz"
 
-#: views.py:59
+#: views.py:70
 #, python-brace-format
 msgid "{0} updated!"
 msgstr "{0} zaktualizowany"
 
-#: views.py:68
+#: views.py:79
 #, python-brace-format
 msgid "{0} deleted!"
 msgstr "{0} usunięty!"
+
+#~ msgid "Created by"
+#~ msgstr "Utworzone przez"

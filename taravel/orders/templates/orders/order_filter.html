@@ -21,7 +21,7 @@
                 {% for object in object_list %}
                     <tr>
                         <td>{{object}}</td>
-                        <td>{{object.value}}</td>
+                        <td>{{object.total_value}}</td>
                         <td>{{object.created}}</td>
                         <td>{% include 'payments/_payment_badge.html' with status=object.is_paid %}</td>
                         

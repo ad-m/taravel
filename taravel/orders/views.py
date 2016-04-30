@@ -23,7 +23,7 @@ class OrderListView(ListView):
 
     def get_queryset(self, *args, **kwargs):
         qs = super(OrderListView, self).get_queryset(*args, **kwargs)
-        qs = qs.filter(user=self.request.user)
+        qs = qs.filter(user=self.request.user).with_total_value()
         return qs
 
 

@@ -57,6 +57,8 @@ class GuestInline(InlineFormSet):
         kw = super(GuestInline, self).get_factory_kwargs(*args, **kwargs)
         kw['min_num'] = 1
         kw['validate_min'] = True
+        kw['max_num'] = self.view.trip.free_count
+        kw['validate_max'] = True
         return kw
 
 
@@ -69,7 +71,8 @@ class OrderCreateView(NamedFormsetsMixin, LoginRequiredMixin, UserFormKwargsMixi
 
     @cached_property
     def trip(self):
-        return get_object_or_404(Trip.objects.select_related('location', 'location__country'),
+        qs = Trip.objects.select_related('location', 'location__country').with_free_count()
+        return get_object_or_404(qs,
                                  slug=self.kwargs['trip_slug'])
 
     def get_form_kwargs(self, *args, **kwargs):

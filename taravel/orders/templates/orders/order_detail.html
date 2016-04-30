@@ -29,6 +29,7 @@
 <p>{% trans 'Value' %}: {{ object.total_value }}</p>
 
 {% if object.guest_set.all %}
+<h2>{% trans 'Guest list' %}</h2>
 <table class="table table-striped">
     <tr>
         <th>{% trans 'Guest' %}</th>

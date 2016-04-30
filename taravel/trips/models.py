@@ -34,9 +34,9 @@ class Trip(TimeStampedModel):
     created_by = models.ForeignKey(to=settings.AUTH_USER_MODEL)
     description = BleachField(verbose_name=_("Description of trip"))
     base_price = models.IntegerField(verbose_name=_("Price"))  # Custom model field
-    space = models.IntegerField(verbose_name=_("Space"),
-                                default=10,
-                                help_text=_("The maximum number of guests"))
+    space = models.PositiveIntegerField(verbose_name=_("Space"),
+                                        default=10,
+                                        help_text=_("The maximum number of guests"))
     main_image = VersatileImageField(_('Image'), upload_to='images/')
     objects = TripQuerySet.as_manager()
 

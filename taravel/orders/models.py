@@ -1,5 +1,7 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext as _f
+
 from django.core.urlresolvers import reverse
 from django.conf import settings
 from django.utils.encoding import python_2_unicode_compatible
@@ -36,7 +38,9 @@ class Order(models.Model):
         permissions = (("view_order", "Can view order"), )
 
     def __str__(self):
-        return _("Order #%d") % (self.pk, )
+        if self.pk:
+            return _("Order #%d") % (self.pk, )
+        return _f("Order")
 
     def get_absolute_url(self):
         return reverse('orders:details', kwargs={'pk': self.pk})

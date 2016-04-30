@@ -10,7 +10,6 @@ class GuestFactory(factory.django.DjangoModelFactory):
     first_name = factory.Sequence(lambda n: 'first_name-%04d' % n)
     second_name = factory.Sequence(lambda n: 'first_name-%04d' % n)
     government_id = factory.fuzzy.FuzzyInteger(low=100, high=200)
-    value = factory.LazyAttribute(lambda x: x.order.trip.base_price)
 
     class Meta:
         model = models.Guest

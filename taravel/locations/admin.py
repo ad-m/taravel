@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import Location, Country
 
 
-class LocationInline(admin.StackedInline):
+class LocationInline(admin.TabularInline):
     '''
     Stacked Inline View for Location
     '''
@@ -13,7 +13,7 @@ class CountryAdmin(admin.ModelAdmin):
     '''
         Admin View for Country
     '''
-    list_display = ('name',)
+    list_display = ('name', 'continent')
     list_filter = ('continent',)
     inlines = [
         LocationInline,

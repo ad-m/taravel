@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-10 22:39+0000\n"
-"PO-Revision-Date: 2016-04-30 13:19+0200\n"
+"POT-Creation-Date: 2016-05-10 23:04+0000\n"
+"PO-Revision-Date: 2016-05-11 01:05+0200\n"
 "Last-Translator: Adam Dobrawy <naczelnik@jawnosc.tk>\n"
 "Language-Team: \n"
 "Language: pl\n"
@@ -43,7 +43,7 @@ msgstr "Cena jednostkowa"
 msgid "Participation value of each guest"
 msgstr "Koszt udziału każdego gościa"
 
-#: models.py:38 templates/orders/_order_list_mini.html.py:4
+#: models.py:38 models.py:57 templates/orders/_order_list_mini.html.py:4
 #: templates/orders/order_filter.html:15
 msgid "Order"
 msgstr "Zamówienie"
@@ -57,6 +57,27 @@ msgstr "Zamówienia"
 #, python-format
 msgid "Order #%d"
 msgstr "Zamówienie #%d"
+
+#: models.py:58
+msgid "First name"
+msgstr "Imię"
+
+#: models.py:59
+msgid "Second name"
+msgstr "Nazwisko"
+
+#: models.py:60
+msgid "Government ID"
+msgstr "Identyfikator państwowy"
+
+#: models.py:64 templates/orders/order_detail.html.py:35
+#: templates/orders/order_form.html:36
+msgid "Guest"
+msgstr "Gość"
+
+#: models.py:65
+msgid "Guests"
+msgstr "Goście"
 
 #: templates/orders/_order_list_mini.html:5
 #: templates/orders/order_filter.html:17
@@ -99,10 +120,6 @@ msgstr "Płatność"
 msgid "Guest list"
 msgstr "Lista gości"
 
-#: templates/orders/order_detail.html:35 templates/orders/order_form.html:36
-msgid "Guest"
-msgstr "Gość"
-
 #: templates/orders/order_detail.html:36
 msgid "Governement ID"
 msgstr "Identyfikator rządowy"
@@ -135,12 +152,12 @@ msgstr "Zamów i opłać"
 msgid "View all orders"
 msgstr "Zobacz wszystkie zamówienia"
 
-#: views.py:103
+#: views.py:102
 #, python-brace-format
 msgid "{0} updated!"
 msgstr "{0} zaktualizowany!"
 
-#: views.py:112
+#: views.py:111
 #, python-brace-format
 msgid "{0} deleted!"
 msgstr "{0} usunięty!"

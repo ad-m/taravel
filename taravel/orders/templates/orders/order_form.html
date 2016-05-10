@@ -26,7 +26,7 @@ $(function() {
 <ol class="breadcrumb">
   <li><a href="{{trip.location.country.get_absolute_url}}">{{trip.location.country}}</a></li>
   <li><a href="{{trip.location.get_absolute_url}}">{{trip.location}}</a></li>
-  <li><a href="{{trip.trip.location.get_absolute_url}}">{{trip}}</a></li>
+  <li><a href="{{trip.get_absolute_url}}">{{trip}}</a></li>
   <li class="active">{% trans 'Add order' %}</li>
 </ol>
 {% endif %}

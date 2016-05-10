@@ -10,13 +10,13 @@ from model_utils import Choices
 
 @python_2_unicode_compatible
 class Country(models.Model):
-    CONTINENT = Choices((0, 'asia', 'Asia'),
-                        (1, 'africa', 'Africa'),
-                        (2, 'north_america', 'North America'),
-                        (3, 'south_america', 'South America'),
-                        (4, 'antarctica', 'Antarctica'),
-                        (5, 'europe', 'Europe'),
-                        (6, 'australia', 'Australia'))
+    CONTINENT = Choices((0, 'asia', _('Asia')),
+                        (1, 'africa', _('Africa')),
+                        (2, 'north_america', _('North America')),
+                        (3, 'south_america', _('South America')),
+                        (4, 'antarctica', _('Antarctica')),
+                        (5, 'europe', _('Europe')),
+                        (6, 'australia', _('Australia')))
     continent = models.IntegerField(choices=CONTINENT,
                                     default=CONTINENT.europe,
                                     verbose_name=_("Continent"))

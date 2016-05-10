@@ -246,3 +246,24 @@ FILTERS_HELP_TEXT_FILTER = False
 # django-bleach
 
 BLEACH_DEFAULT_WIDGET = 'tinymce.widgets.TinyMCE'
+
+BLEACH_ALLOWED_TAGS = [
+    # bleach default
+    'a',
+    'abbr',
+    'acronym',
+    'b',
+    'blockquote',
+    'code',
+    'em',
+    'i',
+    'li',
+    'ol',
+    'strong',
+    'ul',
+    # extra
+    'br',
+    'p',
+    'u',
+    'div',
+]

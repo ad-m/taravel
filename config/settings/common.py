@@ -48,7 +48,6 @@ THIRD_PARTY_APPS = (
 LOCAL_APPS = (
     'taravel.users',  # custom users app
     'taravel.trips',
-    'taravel.guests',
     'taravel.orders',
     'taravel.locations',
     'taravel.addresses',

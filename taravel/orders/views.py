@@ -2,7 +2,7 @@ from atom.ext.crispy_forms.forms import BaseTableFormSet
 from atom.views import DeleteMessageMixin
 from braces.views import FormValidMessageMixin, PrefetchRelatedMixin, SelectRelatedMixin, UserFormKwargsMixin
 from cached_property import cached_property
-from django.contrib.auth.mixins import PermissionRequiredMixin, LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.core.urlresolvers import reverse_lazy
 from django.shortcuts import get_object_or_404
 from django.utils.translation import ugettext_lazy as _
@@ -10,11 +10,10 @@ from django.views.generic import DeleteView, DetailView, ListView
 from django_filters.views import FilterView
 from extra_views import CreateWithInlinesView, InlineFormSet, NamedFormsetsMixin, UpdateWithInlinesView
 
-from ..guests.models import Guest
 from ..trips.models import Trip
 from .filters import OrderFilter
 from .forms import OrderForm
-from .models import Order
+from .models import Guest, Order
 
 
 class OrderListView(ListView):

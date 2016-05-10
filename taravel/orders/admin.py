@@ -24,7 +24,7 @@ class OrderAdmin(admin.ModelAdmin):
     '''
     list_display = ('trip', 'user', 'address', 'unit_price', 'guest_count', 'total_value',
                     'is_paid')
-    list_filter = ('unit_price',)
+    list_filter = ('trip__location__country__continent',)
     inlines = [
         GuestInline,
     ]
@@ -37,7 +37,8 @@ class OrderAdmin(admin.ModelAdmin):
 
     def get_queryset(self, *args, **kwargs):
         qs = super(OrderAdmin, self).get_queryset(*args, **kwargs)
-        return qs.with_guest_count().with_total_value()
+        qs = qs.with_guest_count().with_total_value().with_payment()
+        return qs.select_related('user', 'address', 'trip')
 admin.site.register(Order, OrderAdmin)
 
 

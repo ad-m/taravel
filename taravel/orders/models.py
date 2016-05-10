@@ -17,6 +17,9 @@ class OrderQuerySet(models.QuerySet):
     def with_total_value(self):
         return self.annotate(total_value=models.Count('guest') * models.F('unit_price'))
 
+    def with_payment(self):
+        return self.select_related('payment')
+
 
 @python_2_unicode_compatible
 class Order(models.Model):

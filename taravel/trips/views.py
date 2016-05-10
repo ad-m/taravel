@@ -12,7 +12,6 @@ from extra_views import (CreateWithInlinesView, InlineFormSet, NamedFormsetsMixi
 from .filters import TripFilter
 from .forms import TripForm
 from .models import Trip, Image
-from ..orders.models import Order
 
 
 class TripListView(FilterView):
@@ -34,15 +33,11 @@ class TripDetailView(SelectRelatedMixin, DetailView):
             self.select_related.append('created_by')
         return super(TripDetailView, self).dispatch(request, *args, **kwargs)
 
-    def get_context_data(self, **kwargs):
-        context = super(TripDetailView, self).get_context_data(**kwargs)
+    def get_queryset(self, *args, **kwargs):
+        qs = super(TripDetailView, self).get_queryset(*args, **kwargs)
         if self.request.user.is_authenticated():
-            context['order_list'] = (Order.objects.filter(user=self.request.user,
-                                                          trip=self.object).
-                                     with_total_value().
-                                     with_payment().
-                                     all())
-        return context
+            qs = qs.with_user_orders(self.request.user)
+        return qs
 
 
 class ImageInline(InlineFormSet):

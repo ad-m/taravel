@@ -6,7 +6,6 @@ from django.core.urlresolvers import reverse
 from django.conf import settings
 from django.utils.encoding import python_2_unicode_compatible
 
-from taravel.trips.models import Trip
 from taravel.addresses.models import Address
 
 
@@ -24,7 +23,7 @@ class OrderQuerySet(models.QuerySet):
 @python_2_unicode_compatible
 class Order(models.Model):
     user = models.ForeignKey(to=settings.AUTH_USER_MODEL, verbose_name=_("User"))
-    trip = models.ForeignKey(to=Trip, verbose_name=_("Trip"))
+    trip = models.ForeignKey(to='trips.Trip', verbose_name=_("Trip"))
     address = models.ForeignKey(to=Address, verbose_name=_("Billing address"))
     created = models.DateTimeField(verbose_name=_("Creation date"), auto_now_add=True)
     note = models.TextField(blank=True)

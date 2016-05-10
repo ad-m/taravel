@@ -1,13 +1,15 @@
-from django.db import models
-from django.utils.translation import ugettext_lazy as _
-from django.core.urlresolvers import reverse
-from django.conf import settings
-from django.utils.encoding import python_2_unicode_compatible
-from model_utils.models import TimeStampedModel
 from autoslug.fields import AutoSlugField
+from django.conf import settings
+from django.core.urlresolvers import reverse
+from django.db import models
+from django.db.models import Prefetch
+from django.utils.encoding import python_2_unicode_compatible
+from django.utils.translation import ugettext_lazy as _
 from django_bleach.models import BleachField
-from versatileimagefield.fields import VersatileImageField
+from model_utils.models import TimeStampedModel
 from taravel.locations.models import Location
+from taravel.orders.models import Order
+from versatileimagefield.fields import VersatileImageField
 
 
 class TripQuerySet(models.QuerySet):
@@ -21,9 +23,18 @@ class TripQuerySet(models.QuerySet):
         return self.with_guest_count().qs.filter(space__gt=models.F('guest_count')).all()
 
     def with_free_count(self):
-        expr = models.ExpressionWrapper(expression=models.F('space')-models.F('guest_count'),
+        expr = models.ExpressionWrapper(expression=models.F('space') - models.F('guest_count'),
                                         output_field=models.IntegerField())
         return self.with_guest_count().annotate(free_count=expr)
+
+    def with_user_orders(self, user):
+        qs = (Order.objects.filter(user=user).
+              with_total_value().
+              with_payment().
+              all())
+        return self.prefetch_related(Prefetch('order_set',
+                                              queryset=qs,
+                                              to_attr='user_orders'))
 
 
 @python_2_unicode_compatible
@@ -33,7 +44,8 @@ class Trip(TimeStampedModel):
     slug = AutoSlugField(populate_from='name', verbose_name=_("Slug"), unique=True)
     created_by = models.ForeignKey(to=settings.AUTH_USER_MODEL)
     description = BleachField(verbose_name=_("Description of trip"))
-    base_price = models.IntegerField(verbose_name=_("Price"))  # Custom model field
+    base_price = models.IntegerField(verbose_name=_("Price"),
+                                     help_text=_("Price per each guest"))
     space = models.PositiveIntegerField(verbose_name=_("Space"),
                                         default=10,
                                         help_text=_("The maximum number of guests"))
@@ -51,7 +63,7 @@ class Trip(TimeStampedModel):
         return reverse('trips:details', kwargs={'slug': self.slug})
 
     def get_price_display(self):
-        return "%.2f PLN" % (self.price/100)
+        return "%.2f PLN" % (self.price / 100)
 
 
 class Image(models.Model):

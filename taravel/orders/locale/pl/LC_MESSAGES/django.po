@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-30 10:53+0000\n"
-"PO-Revision-Date: 2016-04-30 12:54+0200\n"
+"POT-Creation-Date: 2016-04-30 11:18+0000\n"
+"PO-Revision-Date: 2016-04-30 13:19+0200\n"
 "Last-Translator: Adam Dobrawy <naczelnik@jawnosc.tk>\n"
 "Language-Team: \n"
 "Language: pl\n"
@@ -19,41 +19,41 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
-#: models.py:23
+#: models.py:26
 msgid "User"
 msgstr "Użytkownik / użytkowniczka"
 
-#: models.py:24
+#: models.py:27
 msgid "Trip"
 msgstr "Wycieczka"
 
-#: models.py:25
+#: models.py:28
 msgid "Billing address"
 msgstr "Adres rozliczeniowy"
 
-#: models.py:26
+#: models.py:29
 msgid "Creation date"
 msgstr "Data utowrzenia"
 
-#: models.py:28
+#: models.py:31
 msgid "Unit price"
 msgstr "Cena jednostkowa"
 
-#: models.py:29
+#: models.py:32
 msgid "Participation value of each guest"
 msgstr "Koszt udziału każdego gościa"
 
-#: models.py:36 templates/orders/_order_list_mini.html.py:4
+#: models.py:39 templates/orders/_order_list_mini.html.py:4
 #: templates/orders/order_filter.html:15
 msgid "Order"
 msgstr "Zamówienie"
 
-#: models.py:37 templates/orders/order_detail.html.py:5
+#: models.py:40 templates/orders/order_detail.html.py:5
 #: templates/orders/order_filter.html:5 templates/orders/order_list.html:5
 msgid "Orders"
 msgstr "Zamówienia"
 
-#: models.py:42
+#: models.py:45
 #, python-format
 msgid "Order #%d"
 msgstr "Zamówienie #%d"
@@ -71,7 +71,7 @@ msgstr "Wartośc"
 #: templates/orders/_order_list_mini.html:9
 #: templates/orders/order_filter.html:18
 msgid "Paid"
-msgstr "Opłacony"
+msgstr "Opłacone"
 
 #: templates/orders/_order_list_mini.html:10
 #: templates/orders/order_filter.html:19
@@ -135,12 +135,12 @@ msgstr "Zamów i opłać"
 msgid "View all orders"
 msgstr "Zobacz wszystkie zamówienia"
 
-#: views.py:102
+#: views.py:103
 #, python-brace-format
 msgid "{0} updated!"
 msgstr "{0} zaktualizowany!"
 
-#: views.py:111
+#: views.py:112
 #, python-brace-format
 msgid "{0} deleted!"
 msgstr "{0} usunięty!"

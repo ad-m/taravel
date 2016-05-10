@@ -83,3 +83,6 @@ class PaymentDeleteView(PaymentPermissionMixin, PermissionRequiredMixin, DeleteM
 
     def get_success_message(self):
         return _("{0} deleted!").format(self.object)
+
+    def get_success_url(self, *args, **kwargs):
+        return self.object.order.get_absolute_url()

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-10 22:39+0000\n"
+"POT-Creation-Date: 2016-05-10 23:30+0000\n"
 "PO-Revision-Date: 2016-04-09 16:44+0200\n"
 "Last-Translator: Adam Dobrawy <naczelnik@jawnosc.tk>\n"
 "Language-Team: \n"
@@ -18,6 +18,10 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 1.8.4\n"
+
+#: apps.py:9 models.py:31
+msgid "Addresses"
+msgstr "Adresy"
 
 #: models.py:18
 msgid "User"
@@ -54,10 +58,6 @@ msgstr "Nadany przez władze"
 #: models.py:30 templates/addresses/address_filter.html.py:14
 msgid "Address"
 msgstr "Adres"
-
-#: models.py:31
-msgid "Addresses"
-msgstr "Adresy"
 
 #: templates/addresses/address_filter.html:5
 msgid "Add address"

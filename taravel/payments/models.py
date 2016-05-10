@@ -14,6 +14,10 @@ class PaymentForm(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name = _("Form of payments")
+        verbose_name_plural = _("Forms of payments")
+
 
 class PaymentQuerySet(models.QuerySet):
     pass

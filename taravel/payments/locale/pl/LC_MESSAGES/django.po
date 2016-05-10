@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-10 22:39+0000\n"
-"PO-Revision-Date: 2016-04-30 13:19+0200\n"
+"POT-Creation-Date: 2016-05-10 23:06+0000\n"
+"PO-Revision-Date: 2016-05-11 01:07+0200\n"
 "Last-Translator: Adam Dobrawy <naczelnik@jawnosc.tk>\n"
 "Language-Team: \n"
 "Language: pl\n"
@@ -23,27 +23,35 @@ msgstr ""
 msgid "Name"
 msgstr "Nazwa"
 
-#: models.py:24
+#: models.py:18
+msgid "Form of payments"
+msgstr "Forma płatności"
+
+#: models.py:19
+msgid "Forms of payments"
+msgstr "Formy płatności"
+
+#: models.py:28
 msgid "Order"
 msgstr "Zamówienie"
 
-#: models.py:26
+#: models.py:30
 msgid "Form of payment"
 msgstr "Forma płatności"
 
-#: models.py:27
+#: models.py:31
 msgid "Creation date"
 msgstr "Data utowrzenia"
 
-#: models.py:31
+#: models.py:35
 msgid "Payment"
 msgstr "Płatność"
 
-#: models.py:32
+#: models.py:36
 msgid "Payments"
 msgstr "Płatności"
 
-#: models.py:36
+#: models.py:40
 #, python-format
 msgid "Payment #%d"
 msgstr "Płatność #%d"

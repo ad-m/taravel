@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-30 10:55+0000\n"
-"PO-Revision-Date: 2016-04-30 12:55+0200\n"
+"POT-Creation-Date: 2016-05-10 22:39+0000\n"
+"PO-Revision-Date: 2016-05-11 00:39+0200\n"
 "Last-Translator: Adam Dobrawy <naczelnik@jawnosc.tk>\n"
 "Language-Team: \n"
 "Language: pl\n"
@@ -35,47 +35,51 @@ msgstr "Kraj (rosnąco)"
 msgid "Country (descending)"
 msgstr "Kraj (malejąco)"
 
-#: models.py:31
+#: models.py:42
 msgid "Location"
 msgstr "Miejsce"
 
-#: models.py:32
+#: models.py:43
 msgid "Name"
 msgstr "Nazwa"
 
-#: models.py:33
+#: models.py:44
 msgid "Slug"
 msgstr "Identyfikator redakcyjny"
 
-#: models.py:35
+#: models.py:46
 msgid "Description of trip"
 msgstr "Opis wycieczki"
 
-#: models.py:36
+#: models.py:47
 msgid "Price"
 msgstr "Cena"
 
-#: models.py:37
+#: models.py:48
+msgid "Price per each guest"
+msgstr "Cena za każdego gościa"
+
+#: models.py:49
 msgid "Space"
 msgstr "Miejsca"
 
-#: models.py:39
+#: models.py:51
 msgid "The maximum number of guests"
 msgstr "Maksymalna liczba gości"
 
-#: models.py:40 models.py:59 models.py:65
+#: models.py:52 models.py:71 models.py:77
 msgid "Image"
 msgstr "Obraz"
 
-#: models.py:44 models.py:58
+#: models.py:56 models.py:70
 msgid "Trip"
 msgstr "Wycieczka"
 
-#: models.py:45
+#: models.py:57
 msgid "Trips"
 msgstr "Wycieczki"
 
-#: models.py:66
+#: models.py:78
 msgid "Images"
 msgstr "Obrazy"
 
@@ -136,12 +140,12 @@ msgstr "Galeria"
 msgid "Save"
 msgstr "Zapisz"
 
-#: views.py:70
+#: views.py:66
 #, python-brace-format
 msgid "{0} updated!"
 msgstr "{0} zaktualizowany"
 
-#: views.py:79
+#: views.py:75
 #, python-brace-format
 msgid "{0} deleted!"
 msgstr "{0} usunięty!"

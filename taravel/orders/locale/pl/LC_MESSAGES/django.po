@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-30 11:18+0000\n"
+"POT-Creation-Date: 2016-05-10 22:39+0000\n"
 "PO-Revision-Date: 2016-04-30 13:19+0200\n"
 "Last-Translator: Adam Dobrawy <naczelnik@jawnosc.tk>\n"
 "Language-Team: \n"
@@ -19,41 +19,41 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
-#: models.py:26
+#: models.py:25
 msgid "User"
 msgstr "Użytkownik / użytkowniczka"
 
-#: models.py:27
+#: models.py:26
 msgid "Trip"
 msgstr "Wycieczka"
 
-#: models.py:28
+#: models.py:27
 msgid "Billing address"
 msgstr "Adres rozliczeniowy"
 
-#: models.py:29
+#: models.py:28
 msgid "Creation date"
 msgstr "Data utowrzenia"
 
-#: models.py:31
+#: models.py:30
 msgid "Unit price"
 msgstr "Cena jednostkowa"
 
-#: models.py:32
+#: models.py:31
 msgid "Participation value of each guest"
 msgstr "Koszt udziału każdego gościa"
 
-#: models.py:39 templates/orders/_order_list_mini.html.py:4
+#: models.py:38 templates/orders/_order_list_mini.html.py:4
 #: templates/orders/order_filter.html:15
 msgid "Order"
 msgstr "Zamówienie"
 
-#: models.py:40 templates/orders/order_detail.html.py:5
+#: models.py:39 templates/orders/order_detail.html.py:5
 #: templates/orders/order_filter.html:5 templates/orders/order_list.html:5
 msgid "Orders"
 msgstr "Zamówienia"
 
-#: models.py:45
+#: models.py:44
 #, python-format
 msgid "Order #%d"
 msgstr "Zamówienie #%d"

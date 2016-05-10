@@ -26,7 +26,7 @@ class PaymentQuerySet(models.QuerySet):
 @python_2_unicode_compatible
 class Payment(models.Model):
     order = models.OneToOneField(Order, verbose_name=_("Order"))
-    cashier = models.ForeignKey(settings.AUTH_USER_MODEL, blank=True, null=True)
+    cashier = models.ForeignKey(settings.AUTH_USER_MODEL)
     form = models.ForeignKey(PaymentForm, verbose_name=_("Form of payment"))
     created = models.DateTimeField(verbose_name=_("Creation date"), auto_now_add=True)
     objects = PaymentQuerySet.as_manager()

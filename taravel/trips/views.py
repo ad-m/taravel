@@ -40,6 +40,7 @@ class TripDetailView(SelectRelatedMixin, DetailView):
             context['order_list'] = (Order.objects.filter(user=self.request.user,
                                                           trip=self.object).
                                      with_total_value().
+                                     with_payment().
                                      all())
         return context
 

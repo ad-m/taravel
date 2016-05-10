@@ -40,7 +40,7 @@ class OrderFilterView(FilterView):
 
 class OrderDetailView(SelectRelatedMixin, PrefetchRelatedMixin, DetailView):
     model = Order
-    select_related = ['user', 'trip', 'payment']
+    select_related = ['user', 'trip', 'payment', 'payment__cashier', 'payment__form']
     prefetch_related = ['guest_set', ]
 
     def get_queryset(self, *args, **kwargs):
@@ -57,8 +57,9 @@ class GuestInline(InlineFormSet):
         kw = super(GuestInline, self).get_factory_kwargs(*args, **kwargs)
         kw['min_num'] = 1
         kw['validate_min'] = True
-        kw['max_num'] = self.view.trip.free_count
-        kw['validate_max'] = True
+        if hasattr(self.view, 'trip'):
+            kw['max_num'] = self.view.trip.free_count
+            kw['validate_max'] = True
         return kw
 
 

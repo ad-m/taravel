@@ -70,7 +70,7 @@ class Trip(TimeStampedModel):
         return reverse('trips:details', kwargs={'slug': self.slug})
 
     def get_price_display(self):
-        return "%.2f PLN" % (self.price / 100)
+        return "%.2f PLN" % (self.base_price / 100)
 
 
 class Image(models.Model):

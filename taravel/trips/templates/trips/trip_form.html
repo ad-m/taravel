@@ -1,5 +1,6 @@
 {% extends 'trips/trip_base.html' %}
 {% load crispy_forms_tags i18n %}
+
 {% block javascript %}
 {{block.super}}
 <script src="https://raw.githubusercontent.com/elo80ka/django-dynamic-formset/v1.2.2/src/jquery.formset.js"></script>
@@ -14,6 +15,19 @@ $(function() {
 </script>
 {{form.media}}
 {% endblock %}
+
+{% block css %}
+{{block.super}}
+<style>
+#id_point_map {
+ height: 70vh;
+}
+.mceLayout {
+    width: 100% !important;
+}
+</style>
+{% endblock %}
+
 {% block content %}
 <div class="buttons">
 {% if perms.locations.add_location %}

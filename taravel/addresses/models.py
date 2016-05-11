@@ -21,9 +21,8 @@ class Address(models.Model):
     street_number = models.CharField(verbose_name=_("Street number"), max_length=10)
     postcode = models.CharField(verbose_name=_("Postcode"), max_length=6)
     city = models.CharField(verbose_name=_("City"), max_length=50)
-    taxpayer_id = models.IntegerField(verbose_name=_("Taxpayer ID"),
-                                      help_text=_("Awarded by the government"))
-    active = models.BooleanField(default=True)
+    taxpayer_id = models.IntegerField(verbose_name=_("Taxpayer ID"))
+    active = models.BooleanField(default=True, verbose_name=_("Active"))
     objects = AddressQuerySet.as_manager()
 
     class Meta:

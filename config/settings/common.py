@@ -248,6 +248,8 @@ FILTERS_HELP_TEXT_FILTER = False
 
 BLEACH_DEFAULT_WIDGET = 'tinymce.widgets.TinyMCE'
 
+LOCALE_PATHS = [str(APPS_DIR.path('locale')), ]
+
 BLEACH_ALLOWED_TAGS = [
     # bleach default
     'a',

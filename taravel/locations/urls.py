@@ -17,4 +17,9 @@ urlpatterns = [
         name="update"),
     url(r'^country-(?P<pk>\w+)/~delete$', views.CountryDeleteView.as_view(),
         name="delete"),
+    url(r'^location/(?P<z>\d+)/(?P<x>\d+)/(?P<y>\d+).geojson$',
+        views.LocationTiledGeoJSONLayerView.as_view(),
+        name="data"),
+    url(r'^location.geojson$', views.LocationMapLayer.as_view(), name='data')
+
 ]

@@ -55,3 +55,7 @@ class Location(models.Model):
 
     def get_absolute_url(self):
         return "%s?location=%d" % (reverse('trips:list'), self.pk)
+
+    @property
+    def absolute_url(self):
+        return self.get_absolute_url()

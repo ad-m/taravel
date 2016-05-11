@@ -4,9 +4,12 @@ from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.urlresolvers import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic import CreateView, DeleteView, UpdateView
+from djgeojson.views import GeoJSONLayerView, TiledGeoJSONLayerView
 
 from .forms import CountryForm, LocationForm
 from .models import Country, Location
+
+PROPERTIES_LIST = ('absolute_url', 'name', )
 
 
 class LocationCreateView(PermissionRequiredMixin, CreateView):
@@ -61,3 +64,17 @@ class CountryDeleteView(PermissionRequiredMixin, DeleteMessageMixin, DeleteView)
 
     def get_success_message(self):
         return _("{0} deleted!").format(self.object)
+
+
+class LocationTiledGeoJSONLayerView(TiledGeoJSONLayerView):
+    model = Location
+    geometry_field = 'position'
+    properties = PROPERTIES_LIST
+
+
+class LocationMapLayer(GeoJSONLayerView):
+    model = Location
+    precision = 4
+    simplify = 0.5
+    geometry_field = 'position'
+    properties = PROPERTIES_LIST

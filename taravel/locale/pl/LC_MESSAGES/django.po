@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-11 05:23+0000\n"
-"PO-Revision-Date: 2016-05-11 07:24+0200\n"
+"POT-Creation-Date: 2016-05-11 05:30+0000\n"
+"PO-Revision-Date: 2016-05-11 07:30+0200\n"
 "Last-Translator: Adam Dobrawy <naczelnik@jawnosc.tk>\n"
 "Language-Team: \n"
 "Language: pl\n"
@@ -50,7 +50,7 @@ msgstr "Niezweryfukowany"
 
 #: templates/account/email.html:31
 msgid "Primary"
-msgstr "Podatawowy"
+msgstr "Podstawowy"
 
 #: templates/account/email.html:37
 msgid "Make Primary"

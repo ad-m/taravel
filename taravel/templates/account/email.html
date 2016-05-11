@@ -7,7 +7,7 @@
 
 {% block content %}
 <div class="row">
-  <div class="col-md-5">
+  <div class="col-md-6">
     <h1>{% trans "E-mail Addresses" %}</h1>
     {% if user.emailaddress_set.all %}
     <p>{% trans 'The following e-mail addresses are associated with your account:' %}</p>
@@ -35,8 +35,8 @@
 
         <div class="btn-group">
           <button class="btn btn-primary" type="submit" name="action_primary" >{% trans 'Make Primary' %}</button>
-          <button class="btn btn-default" type="submit" name="action_send" >{% trans 'Re-send Verification' %}</button>
-          <button class="btn btn-default" type="submit" name="action_remove" >{% trans 'Remove' %}</button>
+          <button class="btn btn-secondary" type="submit" name="action_send" >{% trans 'Re-send Verification' %}</button>
+          <button class="btn btn-secondary" type="submit" name="action_remove" >{% trans 'Remove' %}</button>
         </div>
 
       </fieldset>
@@ -46,7 +46,8 @@
     <p><strong>{% trans 'Warning:'%}</strong> {% trans "You currently do not have any e-mail address set up. You should really add an e-mail address so you can receive notifications, reset your password, etc." %}</p>
 
     {% endif %}
-
+  </div>
+  <div class="col-md-6">
 
     <h2>{% trans "Add E-mail Address" %}</h2>
 

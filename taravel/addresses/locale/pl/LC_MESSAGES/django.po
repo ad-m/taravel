@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-10 23:32+0000\n"
+"POT-Creation-Date: 2016-05-11 05:23+0000\n"
 "PO-Revision-Date: 2016-05-11 01:32+0200\n"
 "Last-Translator: Adam Dobrawy <naczelnik@jawnosc.tk>\n"
 "Language-Team: \n"
@@ -19,73 +19,78 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
-#: apps.py:9 models.py:31
+#: addresses/apps.py:9 addresses/models.py:30
 msgid "Addresses"
 msgstr "Adresy"
 
-#: models.py:18
+#: addresses/models.py:18
 msgid "User"
 msgstr "Użytkownik / użytkowniczka"
 
-#: models.py:19
+#: addresses/models.py:19
 msgid "Name"
 msgstr "Nazwa"
 
-#: models.py:20
+#: addresses/models.py:20
 msgid "Street"
 msgstr "Ulica"
 
-#: models.py:21
+#: addresses/models.py:21
 msgid "Street number"
 msgstr "Numer ulicy"
 
-#: models.py:22
+#: addresses/models.py:22
 msgid "Postcode"
 msgstr "Kod pocztowy"
 
-#: models.py:23
+#: addresses/models.py:23
 msgid "City"
 msgstr "Miejscowość"
 
-#: models.py:24
+#: addresses/models.py:24
 msgid "Taxpayer ID"
 msgstr "Identyfikator podatnika"
 
-#: models.py:25
-msgid "Awarded by the government"
-msgstr "Nadany przez władze"
+#: addresses/models.py:25
+#, fuzzy
+#| msgid "Action"
+msgid "Active"
+msgstr "Akcja"
 
-#: models.py:30 templates/addresses/address_filter.html.py:14
+#: addresses/models.py:29 addresses/templates/addresses/address_filter.html:14
 msgid "Address"
 msgstr "Adres"
 
-#: templates/addresses/address_filter.html:5
+#: addresses/templates/addresses/address_filter.html:5
 msgid "Add address"
 msgstr "Dodaj adres"
 
-#: templates/addresses/address_filter.html:15
+#: addresses/templates/addresses/address_filter.html:15
 msgid "Action"
 msgstr "Akcja"
 
-#: templates/addresses/address_filter.html:23
+#: addresses/templates/addresses/address_filter.html:23
 msgid "Update"
 msgstr "Zaktualizuj"
 
-#: templates/addresses/address_filter.html:29
+#: addresses/templates/addresses/address_filter.html:29
 msgid "Delete"
 msgstr "Usun"
 
-#: views.py:43
+#: addresses/views.py:43
 #, python-brace-format
 msgid "{0} created!"
 msgstr "{0} utworzony!"
 
-#: views.py:64
+#: addresses/views.py:64
 #, python-brace-format
 msgid "{0} updated!"
 msgstr "{0} zaktualizowany!"
 
-#: views.py:77
+#: addresses/views.py:77
 #, python-brace-format
 msgid "{0} deleted!"
 msgstr "{0} usunięty!"
+
+#~ msgid "Awarded by the government"
+#~ msgstr "Nadany przez władze"

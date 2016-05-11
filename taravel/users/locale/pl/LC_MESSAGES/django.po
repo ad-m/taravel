@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-10 23:30+0000\n"
+"POT-Creation-Date: 2016-05-11 05:23+0000\n"
 "PO-Revision-Date: 2016-05-11 00:39+0200\n"
 "Last-Translator: Adam Dobrawy <naczelnik@jawnosc.tk>\n"
 "Language-Team: \n"
@@ -19,40 +19,41 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
-#: apps.py:9 templates/users/user_list.html.py:9
+#: users/apps.py:9 users/templates/users/user_list.html:9
 msgid "Users"
 msgstr "Użytkownicy / użytkowniczki"
 
-#: models.py:16
+#: users/models.py:16
 msgid "Name of User"
 msgstr "Nazwa użytkownika"
 
-#: models.py:19
+#: users/models.py:19
 msgid "Discount"
 msgstr "Rabat"
 
-#: templates/users/user_detail.html:5
+#: users/templates/users/user_detail.html:5
 msgid "User: "
 msgstr "Użytkownik / użytkowniczka: "
 
-#: templates/users/user_detail.html:23
+#: users/templates/users/user_detail.html:23
 msgid "My Info"
 msgstr "O mnie"
 
-#: templates/users/user_detail.html:24
+#: users/templates/users/user_detail.html:24
 msgid "E-Mail"
 msgstr "E-mail"
 
-#: templates/users/user_form.html:14
+#: users/templates/users/user_detail.html:25
+msgid "Addresses"
+msgstr "Adresy"
+
+#: users/templates/users/user_form.html:14
 msgid "Update"
 msgstr "Zaktualizuj"
 
-#: templates/users/user_list.html:3
+#: users/templates/users/user_list.html:3
 msgid "Members"
 msgstr "Członkowie"
-
-#~ msgid "Addresses"
-#~ msgstr "Adresy"
 
 #~ msgid "Orders"
 #~ msgstr "Zamówienia"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-10 23:33+0000\n"
+"POT-Creation-Date: 2016-05-11 05:23+0000\n"
 "PO-Revision-Date: 2016-05-11 01:34+0200\n"
 "Last-Translator: Adam Dobrawy <naczelnik@jawnosc.tk>\n"
 "Language-Team: \n"
@@ -19,85 +19,85 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
-#: apps.py:9 models.py:51
+#: locations/apps.py:9 locations/models.py:51
 msgid "Locations"
 msgstr "Miejsca"
 
-#: models.py:13
+#: locations/models.py:13
 msgid "Asia"
 msgstr "Azja"
 
-#: models.py:14
+#: locations/models.py:14
 msgid "Africa"
 msgstr "Afryka"
 
-#: models.py:15
+#: locations/models.py:15
 msgid "North America"
 msgstr "Ameryka północna"
 
-#: models.py:16
+#: locations/models.py:16
 msgid "South America"
 msgstr "Ameryka południowa"
 
-#: models.py:17
+#: locations/models.py:17
 msgid "Antarctica"
 msgstr "Antarktyda"
 
-#: models.py:18
+#: locations/models.py:18
 msgid "Europe"
 msgstr "Europa"
 
-#: models.py:19
+#: locations/models.py:19
 msgid "Australia"
 msgstr "Australia"
 
-#: models.py:22
+#: locations/models.py:22
 msgid "Continent"
 msgstr "Kontynent"
 
-#: models.py:23
+#: locations/models.py:23
 msgid "Name of country"
 msgstr "Nazwa kraju"
 
-#: models.py:24 models.py:45
+#: locations/models.py:24 locations/models.py:45
 msgid "Slug"
 msgstr "Identyfikator redakcyjny"
 
-#: models.py:27 models.py:43
+#: locations/models.py:27 locations/models.py:43
 msgid "Country"
 msgstr "Kraj"
 
-#: models.py:28
+#: locations/models.py:28
 msgid "Countries"
 msgstr "Kraje"
 
-#: models.py:44
+#: locations/models.py:44
 msgid "Name"
 msgstr "Nazwa"
 
-#: models.py:46
+#: locations/models.py:46
 msgid "Position"
 msgstr "Pozycja"
 
-#: models.py:50
+#: locations/models.py:50
 msgid "Location"
 msgstr "Miejsce"
 
-#: templates/locations/location_form.html:6
+#: locations/templates/locations/location_form.html:8
 msgid "Add country"
 msgstr "Dodaj kraj"
 
-#: views.py:18 views.py:45
+#: locations/views.py:25 locations/views.py:52
 #, python-brace-format
 msgid "{0} created!"
 msgstr "{0} utworzony!"
 
-#: views.py:27 views.py:54
+#: locations/views.py:34 locations/views.py:61
 #, python-brace-format
 msgid "{0} updated!"
 msgstr "{0} zaktualizowany!"
 
-#: views.py:36 views.py:63
+#: locations/views.py:43 locations/views.py:70
 #, python-brace-format
 msgid "{0} deleted!"
 msgstr "{0} usunięty!"

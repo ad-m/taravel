@@ -15,4 +15,6 @@ urlpatterns = [
         name="update"),
     url(r'^trip-(?P<slug>[\w-]+)/~delete$', views.TripDeleteView.as_view(),
         name="delete"),
+    url(r'^search', views.SearchView.as_view(), name="search")
+
 ]

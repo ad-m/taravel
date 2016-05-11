@@ -16,3 +16,4 @@ class LocationForm(SingleButtonMixin, forms.ModelForm):
         model = Location
         fields = ['country', 'name', 'position']
         widgets = {'position': LeafletWidget()}
+

@@ -10,9 +10,11 @@ from model_utils.models import TimeStampedModel
 from taravel.locations.models import Location
 from taravel.orders.models import Order
 from versatileimagefield.fields import VersatileImageField
+from django.contrib.gis.db.models.query import GeoQuerySet
+from django.contrib.gis.measure import D
 
 
-class TripQuerySet(models.QuerySet):
+class TripQuerySet(GeoQuerySet):
     def with_guest_count(self):
         return self.annotate(guest_count=models.Count('order__guest')).all()
 
@@ -35,6 +37,11 @@ class TripQuerySet(models.QuerySet):
         return self.prefetch_related(Prefetch('order_set',
                                               queryset=qs,
                                               to_attr='user_orders'))
+
+    def nearest(self, point):
+        return (self.
+                distance(point, field_name='location__position').
+                order_by('distance'))
 
 
 @python_2_unicode_compatible

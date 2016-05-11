@@ -2,21 +2,18 @@
 {% load i18n crispy_forms_tags leaflet_tags %}
 
 {% block content %}
+
 <div class="buttons">
 {% if perms.locations.add_country %}
 <a href="{% url 'locations:create_country' %}" class="btn btn-info">{% trans 'Add country' %}</a>
 {% endif %}
 </div>
-
+    {% leaflet_js plugins="forms" %}
+    {% leaflet_css plugins="forms" %}
 {% crispy form %}
 {% endblock %}
 
 {% block javascript %}
-{% leaflet_js %}
 {{form.media}}
 {{block.super}}
-{% endblock %}
-{% block css %}
-{{block.super}}
-r{% leaflet_css %}
 {% endblock %}

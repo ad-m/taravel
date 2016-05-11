@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load i18n crispy_forms_tags leaflet_tags %}
+{% block content %}
+    {% leaflet_js plugins="forms" %}
+    {% leaflet_css plugins="forms" %}
+{% crispy form %}
+
+{% if form.is_bound %}
+
+{% if object_list %}
+  <h2>{% trans 'Nearest trips near point in maximum distance 500 km.' %}</h2>
+{% regroup object_list by distance as distance_list %}
+{% for distance in distance_list %}
+    <h3>{{ distance.grouper }}</h3>
+        {% for object in distance.list %}
+          {% include 'trips/_trip_mini.html' with object=object %}
+        {% endfor %}
+{% endfor %}
+{% if page_obj.has_previous or page_obj.has_next %}
+<nav>
+  <ul class="pager">
+        {% if page_obj.has_previous %}
+            <li><a href="?page={{ page_obj.previous_page_number }}&amp;point={{request.GET.point |urlencode }}">{% trans 'previous' %}</a></li>
+        {% endif %}
+
+        <span class="current">
+            <li>Page {{ page_obj.number }} of {{ paginator.num_pages }}</li>
+        </span>
+
+        {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}&amp;point={{request.GET.point |urlencode }}">{% trans 'next' %}</a></li>
+        {% endif %}
+  </ul>
+</nav>
+{% endif %}
+
+{% else %}
+<p>{% trans 'Nothing found.' %}</p>
+{% endif %}
+{% endif %}
+{% endblock %}

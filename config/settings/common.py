@@ -271,11 +271,31 @@ BLEACH_ALLOWED_TAGS = [
 
 LEAFLET_CONFIG = {
     'DEFAULT_CENTER': (6.0, 45.0),
-    'DEFAULT_ZOOM': 16,
-    'MIN_ZOOM': 3,
-    'MAX_ZOOM': 18,
+    'DEFAULT_ZOOM': 1,
     'TILES': [('OSM',
                '//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
                '© <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors')]
 
+}
+if env.bool('SQL_LOG', default=True):
+    LOGGING = {
+        'version': 1,
+        'filters': {
+            'require_debug_true': {
+                '()': 'django.utils.log.RequireDebugTrue',
+            }
+        },
+        'handlers': {
+            'console': {
+                'level': 'DEBUG',
+                'filters': ['require_debug_true'],
+                'class': 'logging.StreamHandler',
+            }
+        },
+        'loggers': {
+            'django.db.backends': {
+                'level': 'DEBUG',
+                'handlers': ['console'],
+            }
+        }
 }

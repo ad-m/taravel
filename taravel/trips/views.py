@@ -1,17 +1,17 @@
 from atom.ext.crispy_forms.forms import BaseTableFormSet
 from atom.views import DeleteMessageMixin
-from braces.views import FormValidMessageMixin, SelectRelatedMixin, UserFormKwargsMixin, PrefetchRelatedMixin
+from braces.views import FormValidMessageMixin, PrefetchRelatedMixin, SelectRelatedMixin, UserFormKwargsMixin
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.urlresolvers import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
-from django.views.generic import DeleteView, DetailView
+from django.views.generic import DeleteView, DetailView, ListView
 from django_filters.views import FilterView
-from extra_views import (CreateWithInlinesView, InlineFormSet, NamedFormsetsMixin,
-                         UpdateWithInlinesView)
+from extra_views import CreateWithInlinesView, InlineFormSet, NamedFormsetsMixin, UpdateWithInlinesView
+from cached_property import cached_property
 
 from .filters import TripFilter
-from .forms import TripForm
-from .models import Trip, Image
+from .forms import SearchForm, TripForm
+from .models import Image, Trip
 
 
 class TripListView(FilterView):
@@ -73,3 +73,26 @@ class TripDeleteView(PermissionRequiredMixin, DeleteMessageMixin, DeleteView):
 
     def get_success_message(self):
         return _("{0} deleted!").format(self.object)
+
+
+class SearchView(ListView):
+    form_class = SearchForm
+    template_name = 'trips/search.html'
+    model = Trip
+    paginate_by = 10
+
+    @cached_property
+    def form(self):
+        return self.form_class(self.request.GET or {})
+
+    def get_queryset(self, *args, **kwargs):
+        qs = super(SearchView, self).get_queryset(*args, **kwargs)
+        if self.form.is_valid():
+            self.point = self.form.cleaned_data['point']
+            return qs.nearest(self.point)
+        return qs.none()
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(SearchView, self).get_context_data(*args, **kwargs)
+        context['form'] = self.form
+        return context

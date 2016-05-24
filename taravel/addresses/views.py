@@ -5,7 +5,7 @@ from django.core.urlresolvers import reverse, reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic import CreateView, DeleteView, DetailView, UpdateView
 from django_filters.views import FilterView
-
+from django.shortcuts import redirect
 from .filters import AddressFilter
 from .forms import AddressForm
 from .models import Address
@@ -72,6 +72,16 @@ class AddressDeleteView(AddressPermissionMixin, PermissionRequiredMixin, DeleteM
     model = Address
     success_url = reverse_lazy('trips:list')
     permission_required = 'addresses.delete_address'
+
+    def get_queryset(self, *args, **kwargs):
+        qs = super(AddressDeleteView, self).get_queryset(*args, **kwargs)
+        return qs.with_used_count()
+
+    def get(self, *args, **kwargs):
+        if self.object.used:
+            return redirect(reverse('addresses:list',
+                                    kwargs={'username': self.request.user.username}))
+        return super(AddressDeleteView, self).get(*args, **kwargs)
 
     def get_success_message(self):
         return _("{0} deleted!").format(self.object)

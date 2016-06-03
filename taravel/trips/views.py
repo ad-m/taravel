@@ -58,7 +58,7 @@ class TripCreateView(NamedFormsetsMixin, UserFormKwargsMixin, CreateWithInlinesV
 class TripUpdateView(NamedFormsetsMixin, FormValidMessageMixin, UpdateWithInlinesView):
     model = Trip
     form_class = TripForm
-    permission_required = 'orders.change_order'
+    permission_required = 'trips.change_trip'
     inlines = [ImageInline]
     inlines_names = ['images']
 

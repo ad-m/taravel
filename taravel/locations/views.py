@@ -16,7 +16,7 @@ class LocationMapView(ListView):
     template_name_suffix = '_map'
 
 
-class LocationCreateView(PermissionRequiredMixin, CreateView):
+class LocationCreateView(PermissionRequiredMixin, FormValidMessageMixin, CreateView):
     model = Location
     form_class = LocationForm
     permission_required = 'locations.add_location'
@@ -34,7 +34,8 @@ class LocationUpdateView(PermissionRequiredMixin, FormValidMessageMixin, UpdateV
         return _("{0} updated!").format(self.object)
 
 
-class LocationDeleteView(PermissionRequiredMixin, DeleteMessageMixin, DeleteView):
+class LocationDeleteView(PermissionRequiredMixin, FormValidMessageMixin, DeleteMessageMixin,
+                         DeleteView):
     model = Location
     success_url = reverse_lazy('locations:list')
     permission_required = 'locations.delete_location'
@@ -43,7 +44,7 @@ class LocationDeleteView(PermissionRequiredMixin, DeleteMessageMixin, DeleteView
         return _("{0} deleted!").format(self.object)
 
 
-class CountryCreateView(PermissionRequiredMixin, CreateView):
+class CountryCreateView(PermissionRequiredMixin, FormValidMessageMixin, CreateView):
     model = Country
     form_class = CountryForm
     permission_required = 'locations.create_country'

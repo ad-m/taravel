@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-11 05:30+0000\n"
+"POT-Creation-Date: 2016-06-03 16:53+0000\n"
 "PO-Revision-Date: 2016-05-11 01:07+0200\n"
 "Last-Translator: Adam Dobrawy <naczelnik@jawnosc.tk>\n"
 "Language-Team: \n"
@@ -19,105 +19,105 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
-#: payments/apps.py:9 payments/models.py:36
+#: apps.py:9 models.py:36
 msgid "Payments"
 msgstr "Płatności"
 
-#: payments/models.py:12
+#: models.py:12
 msgid "Name"
 msgstr "Nazwa"
 
-#: payments/models.py:18
+#: models.py:18
 msgid "Form of payments"
 msgstr "Forma płatności"
 
-#: payments/models.py:19
+#: models.py:19
 msgid "Forms of payments"
 msgstr "Formy płatności"
 
-#: payments/models.py:28
+#: models.py:28
 msgid "Order"
 msgstr "Zamówienie"
 
-#: payments/models.py:30
+#: models.py:30
 msgid "Form of payment"
 msgstr "Forma płatności"
 
-#: payments/models.py:31
+#: models.py:31
 msgid "Creation date"
 msgstr "Data utowrzenia"
 
-#: payments/models.py:35
+#: models.py:35
 msgid "Payment"
 msgstr "Płatność"
 
-#: payments/models.py:40
+#: models.py:40
 #, python-format
 msgid "Payment #%d"
 msgstr "Płatność #%d"
 
-#: payments/templates/payments/_payment_badge.html:2
+#: templates/payments/_payment_badge.html:2
 msgid "Paid"
 msgstr "Opłacone"
 
-#: payments/templates/payments/_payment_badge.html:3
+#: templates/payments/_payment_badge.html:3
 msgid "Unpaid"
 msgstr "Nieopłacone"
 
-#: payments/templates/payments/_payment_detail.html:3
-#: payments/templates/payments/_payment_mini.html:3
+#: templates/payments/_payment_detail.html:3
+#: templates/payments/_payment_mini.html:3
 msgid "Payment details "
 msgstr "Szczegóły płatności"
 
-#: payments/templates/payments/_payment_detail.html:5
+#: templates/payments/_payment_detail.html:5
 msgid "Cashier"
 msgstr "Kasjer"
 
-#: payments/templates/payments/_payment_detail.html:7
-#: payments/templates/payments/_payment_mini.html:4
+#: templates/payments/_payment_detail.html:7
+#: templates/payments/_payment_mini.html:4
 msgid "Form"
 msgstr "Forma"
 
-#: payments/templates/payments/_payment_detail.html:8
-#: payments/templates/payments/_payment_mini.html:5
+#: templates/payments/_payment_detail.html:8
+#: templates/payments/_payment_mini.html:5
 msgid "Time"
 msgstr "Czas"
 
-#: payments/templates/payments/_payment_detail.html:10
+#: templates/payments/_payment_detail.html:10
 msgid "Update"
 msgstr "Zaktualizuj"
 
-#: payments/templates/payments/_payment_detail.html:13
+#: templates/payments/_payment_detail.html:13
 msgid "Cancel"
 msgstr "Anuluj"
 
-#: payments/templates/payments/payment_confirm_delete.html:9
+#: templates/payments/payment_confirm_delete.html:9
 msgid "Cancel payment"
 msgstr "Anuluj płatność"
 
-#: payments/templates/payments/payment_form.html:12
+#: templates/payments/payment_form.html:12
 msgid "Update payment"
 msgstr "Zaktualizuj płatność"
 
-#: payments/templates/payments/payment_form.html:14
+#: templates/payments/payment_form.html:14
 msgid "Add payment"
 msgstr "Dodaj płatność"
 
-#: payments/templates/payments/payment_form.html:24
+#: templates/payments/payment_form.html:24
 msgid "Register payment"
 msgstr "Zarejestruj płatność"
 
-#: payments/views.py:52
+#: views.py:52
 #, python-brace-format
 msgid "{0} created!"
 msgstr "{0} utworzony!"
 
-#: payments/views.py:67
+#: views.py:67
 #, python-brace-format
 msgid "{0} updated!"
 msgstr "{0} zaktualizowany!"
 
-#: payments/views.py:85
+#: views.py:85
 #, python-brace-format
 msgid "{0} deleted!"
 msgstr "{0} usunięty!"

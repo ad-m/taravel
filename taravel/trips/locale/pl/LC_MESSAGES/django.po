@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-11 05:30+0000\n"
-"PO-Revision-Date: 2016-05-11 00:39+0200\n"
+"POT-Creation-Date: 2016-06-03 16:53+0000\n"
+"PO-Revision-Date: 2016-06-03 18:53+0200\n"
 "Last-Translator: Adam Dobrawy <naczelnik@jawnosc.tk>\n"
 "Language-Team: \n"
 "Language: pl\n"
@@ -19,149 +19,149 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
-#: trips/apps.py:9 trips/models.py:64
+#: apps.py:9 models.py:64
 msgid "Trips"
 msgstr "Wycieczki"
 
-#: trips/filters.py:19 trips/filters.py:21
+#: filters.py:19 filters.py:21
 msgid "Price (ascending)"
 msgstr "Cena (rosnąco)"
 
-#: trips/filters.py:20
+#: filters.py:20
 msgid "Price (descending)"
 msgstr "Cena (malejąco)"
 
-#: trips/filters.py:22
+#: filters.py:22
 msgid "Country (ascending)"
 msgstr "Kraj (rosnąco)"
 
-#: trips/filters.py:23
+#: filters.py:23
 msgid "Country (descending)"
 msgstr "Kraj (malejąco)"
 
-#: trips/models.py:49
+#: models.py:49
 msgid "Location"
 msgstr "Miejsce"
 
-#: trips/models.py:50
+#: models.py:50
 msgid "Name"
 msgstr "Nazwa"
 
-#: trips/models.py:51
+#: models.py:51
 msgid "Slug"
 msgstr "Identyfikator redakcyjny"
 
-#: trips/models.py:53
+#: models.py:53
 msgid "Description of trip"
 msgstr "Opis wycieczki"
 
-#: trips/models.py:54 trips/templates/trips/_trip_mini.html:10
+#: models.py:54 templates/trips/_trip_mini.html:10
 msgid "Price"
 msgstr "Cena"
 
-#: trips/models.py:55
+#: models.py:55
 msgid "Price per each guest"
 msgstr "Cena za każdego gościa"
 
-#: trips/models.py:56
+#: models.py:56
 msgid "Space"
 msgstr "Miejsca"
 
-#: trips/models.py:58
+#: models.py:58
 msgid "The maximum number of guests"
 msgstr "Maksymalna liczba gości"
 
-#: trips/models.py:59 trips/models.py:78 trips/models.py:84
+#: models.py:59 models.py:78 models.py:84
 msgid "Image"
 msgstr "Obraz"
 
-#: trips/models.py:63 trips/models.py:77
+#: models.py:63 models.py:77
 msgid "Trip"
 msgstr "Wycieczka"
 
-#: trips/models.py:85
+#: models.py:85
 msgid "Images"
 msgstr "Obrazy"
 
-#: trips/templates/trips/_trip_detail.html:11
+#: templates/trips/_trip_detail.html:11
 #, python-format
 msgid "Created by <a href=\"%(user_link)s\">%(user)s</a>."
 msgstr "Utworzone przez <a href=\"%(user_link)s\">%(user)s</a>."
 
-#: trips/templates/trips/_trip_detail.html:14
+#: templates/trips/_trip_detail.html:14
 msgid "Order trip now"
 msgstr "Zamów wycieczkę teraz"
 
-#: trips/templates/trips/_trip_mini.html:11
+#: templates/trips/_trip_mini.html:11
 msgid "Details"
 msgstr "Szczegóły"
 
-#: trips/templates/trips/search.html:11
+#: templates/trips/search.html:11
 msgid "Nearest trips near point in maximum distance 500 km."
-msgstr ""
+msgstr "Najbliższe wycieczki w odległości 500 km od punktu"
 
-#: trips/templates/trips/search.html:23
+#: templates/trips/search.html:23
 msgid "previous"
-msgstr ""
+msgstr "poprzedni"
 
-#: trips/templates/trips/search.html:31
+#: templates/trips/search.html:31
 msgid "next"
-msgstr ""
+msgstr "następny"
 
-#: trips/templates/trips/search.html:38
+#: templates/trips/search.html:38
 msgid "Nothing found."
-msgstr ""
+msgstr "Nie znaleziono."
 
-#: trips/templates/trips/trip_detail.html:6
+#: templates/trips/trip_detail.html:6
 msgid "Change trip"
 msgstr "Edytuj wycieczkę"
 
-#: trips/templates/trips/trip_detail.html:9
+#: templates/trips/trip_detail.html:9
 msgid "Remove trip"
 msgstr "Usuń wycieczkę"
 
-#: trips/templates/trips/trip_detail.html:22
+#: templates/trips/trip_detail.html:22
 msgid "Galleries"
 msgstr "Galeria"
 
-#: trips/templates/trips/trip_detail.html:31
+#: templates/trips/trip_detail.html:31
 msgid "Your orders of the trip"
 msgstr "Twoje zamówienia wycieczki"
 
-#: trips/templates/trips/trip_filter.html:9
+#: templates/trips/trip_filter.html:9
 msgid "Add trip"
 msgstr "Dodaj wycieczkę"
 
-#: trips/templates/trips/trip_form.html:11
+#: templates/trips/trip_form.html:11
 msgid "remove"
 msgstr "usuń"
 
-#: trips/templates/trips/trip_form.html:12
+#: templates/trips/trip_form.html:12
 msgid "add another image"
 msgstr "dodaj kolejne zdjęcie"
 
-#: trips/templates/trips/trip_form.html:34
+#: templates/trips/trip_form.html:34
 msgid "Add location"
 msgstr "Dodaj miejsce"
 
-#: trips/templates/trips/trip_form.html:38
+#: templates/trips/trip_form.html:38
 msgid "Add country"
 msgstr "Dodaj kraj"
 
-#: trips/templates/trips/trip_form.html:45
+#: templates/trips/trip_form.html:45
 msgid "Gallery"
 msgstr "Galeria"
 
-#: trips/templates/trips/trip_form.html:50
+#: templates/trips/trip_form.html:50
 msgid "Save"
 msgstr "Zapisz"
 
-#: trips/views.py:66
+#: views.py:66
 #, python-brace-format
 msgid "{0} updated!"
 msgstr "{0} zaktualizowany"
 
-#: trips/views.py:75
+#: views.py:75
 #, python-brace-format
 msgid "{0} deleted!"
 msgstr "{0} usunięty!"

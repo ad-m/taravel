@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-11 05:30+0000\n"
-"PO-Revision-Date: 2016-05-11 01:05+0200\n"
+"POT-Creation-Date: 2016-06-03 16:52+0000\n"
+"PO-Revision-Date: 2016-06-03 18:53+0200\n"
 "Last-Translator: Adam Dobrawy <naczelnik@jawnosc.tk>\n"
 "Language-Team: \n"
 "Language: pl\n"
@@ -19,149 +19,145 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
-#: orders/models.py:25
+#: models.py:25
 msgid "User"
 msgstr "Użytkownik / użytkowniczka"
 
-#: orders/models.py:26
+#: models.py:26
 msgid "Trip"
 msgstr "Wycieczka"
 
-#: orders/models.py:27
+#: models.py:27
 msgid "Billing address"
 msgstr "Adres rozliczeniowy"
 
-#: orders/models.py:28
+#: models.py:28
 msgid "Creation date"
 msgstr "Data utowrzenia"
 
-#: orders/models.py:30
+#: models.py:30
 msgid "Unit price"
 msgstr "Cena jednostkowa"
 
-#: orders/models.py:31
+#: models.py:31
 msgid "Participation value of each guest"
 msgstr "Koszt udziału każdego gościa"
 
-#: orders/models.py:38 orders/models.py:57
-#: orders/templates/orders/_order_list_mini.html:4
-#: orders/templates/orders/order_filter.html:15
+#: models.py:38 models.py:57 templates/orders/_order_list_mini.html:4
+#: templates/orders/order_filter.html:15
 msgid "Order"
 msgstr "Zamówienie"
 
-#: orders/models.py:39 orders/templates/orders/order_detail.html:5
-#: orders/templates/orders/order_filter.html:5
-#: orders/templates/orders/order_list.html:5
+#: models.py:39 templates/orders/order_detail.html:5
+#: templates/orders/order_filter.html:5 templates/orders/order_list.html:5
 msgid "Orders"
 msgstr "Zamówienia"
 
-#: orders/models.py:44
+#: models.py:44
 #, python-format
 msgid "Order #%d"
 msgstr "Zamówienie #%d"
 
-#: orders/models.py:58
+#: models.py:58
 msgid "First name"
 msgstr "Imię"
 
-#: orders/models.py:59
+#: models.py:59
 msgid "Second name"
 msgstr "Nazwisko"
 
-#: orders/models.py:60
+#: models.py:60
 msgid "Number of governmental document with photo"
-msgstr ""
+msgstr "Numer państwowego dokumentu z zdjęciem"
 
-#: orders/models.py:65 orders/templates/orders/order_detail.html:35
-#: orders/templates/orders/order_form.html:36
+#: models.py:65 templates/orders/order_detail.html:35
+#: templates/orders/order_form.html:36
 msgid "Guest"
 msgstr "Gość"
 
-#: orders/models.py:66
+#: models.py:66
 msgid "Guests"
 msgstr "Goście"
 
-#: orders/templates/orders/_order_list_mini.html:5
-#: orders/templates/orders/order_filter.html:17
+#: templates/orders/_order_list_mini.html:5
+#: templates/orders/order_filter.html:17
 msgid "Created"
 msgstr "Data utworzenia"
 
-#: orders/templates/orders/_order_list_mini.html:7
-#: orders/templates/orders/order_detail.html:29
-#: orders/templates/orders/order_filter.html:16
+#: templates/orders/_order_list_mini.html:7
+#: templates/orders/order_detail.html:29 templates/orders/order_filter.html:16
 msgid "Value"
 msgstr "Wartośc"
 
-#: orders/templates/orders/_order_list_mini.html:9
-#: orders/templates/orders/order_filter.html:18
+#: templates/orders/_order_list_mini.html:9
+#: templates/orders/order_filter.html:18
 msgid "Paid"
 msgstr "Opłacone"
 
-#: orders/templates/orders/_order_list_mini.html:10
-#: orders/templates/orders/order_filter.html:19
+#: templates/orders/_order_list_mini.html:10
+#: templates/orders/order_filter.html:19
 msgid "Action"
 msgstr "Akcja"
 
-#: orders/templates/orders/_order_list_mini.html:21
-#: orders/templates/orders/order_filter.html:29
+#: templates/orders/_order_list_mini.html:21
+#: templates/orders/order_filter.html:29
 msgid "Details"
 msgstr "Szczegóły"
 
-#: orders/templates/orders/order_detail.html:10
+#: templates/orders/order_detail.html:10
 msgid "Register payment"
 msgstr "Zarejestruj płatność"
 
-#: orders/templates/orders/order_detail.html:14
-#: orders/templates/orders/order_form.html:23
+#: templates/orders/order_detail.html:14 templates/orders/order_form.html:23
 msgid "Update order"
 msgstr "Zaktualizuj zamówienie"
 
-#: orders/templates/orders/order_detail.html:26
+#: templates/orders/order_detail.html:26
 msgid "Payment"
 msgstr "Płatność"
 
-#: orders/templates/orders/order_detail.html:32
+#: templates/orders/order_detail.html:32
 msgid "Guest list"
 msgstr "Lista gości"
 
-#: orders/templates/orders/order_detail.html:36
+#: templates/orders/order_detail.html:36
 msgid "Governement ID"
 msgstr "Identyfikator rządowy"
 
-#: orders/templates/orders/order_detail.html:46
+#: templates/orders/order_detail.html:46
 msgid "No guests."
 msgstr "Brak gości"
 
-#: orders/templates/orders/order_filter.html:32
+#: templates/orders/order_filter.html:32
 msgid "Add payment"
 msgstr "Dodaj płatność"
 
-#: orders/templates/orders/order_form.html:10
+#: templates/orders/order_form.html:10
 msgid "remove"
 msgstr "usuń"
 
-#: orders/templates/orders/order_form.html:11
+#: templates/orders/order_form.html:11
 msgid "add another guest"
 msgstr "dodaj kolejnego gościa"
 
-#: orders/templates/orders/order_form.html:30
+#: templates/orders/order_form.html:30
 msgid "Add order"
 msgstr "Dodaj zamówienie"
 
-#: orders/templates/orders/order_form.html:42
+#: templates/orders/order_form.html:42
 msgid "Order and pay"
 msgstr "Zamów i opłać"
 
-#: orders/templates/orders/order_list.html:9
+#: templates/orders/order_list.html:9
 msgid "View all orders"
 msgstr "Zobacz wszystkie zamówienia"
 
-#: orders/views.py:102
+#: views.py:102
 #, python-brace-format
 msgid "{0} updated!"
 msgstr "{0} zaktualizowany!"
 
-#: orders/views.py:111
+#: views.py:111
 #, python-brace-format
 msgid "{0} deleted!"
 msgstr "{0} usunięty!"

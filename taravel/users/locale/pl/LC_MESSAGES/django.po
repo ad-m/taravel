@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-10 23:30+0000\n"
+"POT-Creation-Date: 2016-06-03 16:53+0000\n"
 "PO-Revision-Date: 2016-05-11 00:39+0200\n"
 "Last-Translator: Adam Dobrawy <naczelnik@jawnosc.tk>\n"
 "Language-Team: \n"
@@ -19,7 +19,7 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
-#: apps.py:9 templates/users/user_list.html.py:9
+#: apps.py:9 templates/users/user_list.html:9
 msgid "Users"
 msgstr "Użytkownicy / użytkowniczki"
 
@@ -43,6 +43,10 @@ msgstr "O mnie"
 msgid "E-Mail"
 msgstr "E-mail"
 
+#: templates/users/user_detail.html:25
+msgid "Addresses"
+msgstr "Adresy"
+
 #: templates/users/user_form.html:14
 msgid "Update"
 msgstr "Zaktualizuj"
@@ -50,9 +54,6 @@ msgstr "Zaktualizuj"
 #: templates/users/user_list.html:3
 msgid "Members"
 msgstr "Członkowie"
-
-#~ msgid "Addresses"
-#~ msgstr "Adresy"
 
 #~ msgid "Orders"
 #~ msgstr "Zamówienia"

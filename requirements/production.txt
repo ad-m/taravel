@@ -10,7 +10,7 @@
 # there's no python 3 support in stable, have to use the latest release candidate for gevent
 gevent==1.1.1
 
-gunicorn==19.4.5
+gunicorn==19.6.0
 
 # Static and Media Storage
 # ------------------------------------------------
@@ -20,4 +20,4 @@ Collectfast==0.2.3
 
 # Raven is the Sentry client
 # --------------------------
-raven==5.15.0
+raven==5.19.0

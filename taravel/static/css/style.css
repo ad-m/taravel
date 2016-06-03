@@ -262,7 +262,7 @@ body {
   font-size: 1rem;
   line-height: 1.5;
   color: #373a3c;
-  background-color: #fff; }
+  background-color: #21873b; }
 
 [tabindex="-1"]:focus {
   outline: none !important; }
@@ -543,7 +543,7 @@ mark,
 .img-thumbnail {
   padding: 0.25rem;
   line-height: 1.5;
-  background-color: #fff;
+  background-color: #21873b;
   border: 1px solid #ddd;
   border-radius: 0.25rem;
   -webkit-transition: all .2s ease-in-out;
@@ -1250,7 +1250,7 @@ pre {
   .table tbody + tbody {
     border-top: 2px solid #eceeef; }
   .table .table {
-    background-color: #fff; }
+    background-color: #21873b; }
 
 .table-sm th,
 .table-sm td {
@@ -2636,7 +2636,7 @@ input[type="button"].btn-block {
   .nav-tabs .nav-item.open .nav-link:focus,
   .nav-tabs .nav-item.open .nav-link:hover {
     color: #55595c;
-    background-color: #fff;
+    background-color: #21873b;
     border-color: #ddd #ddd transparent; }
 
 .nav-pills::after {
@@ -6807,15 +6807,15 @@ a.bg-danger:focus, a.bg-danger:hover {
 [hidden][style="display: block;"] {
   display: block !important; }
 
-.content .container {
+.content > .container, .content {
   height: 100%;
-  background-color: #ddd; }
+  background-color: #ddd;
+  padding-bottom: 25px; }
 
-html, body, .content {
-  height: 100%; }
+.content {
+  background: #21873b; }
 
 .sidebar {
-  background-color: #eee;
   height: 100%; }
 
 .buttons {

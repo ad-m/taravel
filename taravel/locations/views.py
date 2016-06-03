@@ -3,16 +3,20 @@ from braces.views import FormValidMessageMixin
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.urlresolvers import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
-from django.views.generic import CreateView, DeleteView, UpdateView
+from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 from djgeojson.views import GeoJSONLayerView, TiledGeoJSONLayerView
-
 from .forms import CountryForm, LocationForm
 from .models import Country, Location
 
 PROPERTIES_LIST = ('absolute_url', 'name', )
 
 
-class LocationCreateView(PermissionRequiredMixin, CreateView):
+class LocationMapView(ListView):
+    model = Location
+    template_name_suffix = '_map'
+
+
+class LocationCreateView(PermissionRequiredMixin, FormValidMessageMixin, CreateView):
     model = Location
     form_class = LocationForm
     permission_required = 'locations.add_location'
@@ -30,7 +34,8 @@ class LocationUpdateView(PermissionRequiredMixin, FormValidMessageMixin, UpdateV
         return _("{0} updated!").format(self.object)
 
 
-class LocationDeleteView(PermissionRequiredMixin, DeleteMessageMixin, DeleteView):
+class LocationDeleteView(PermissionRequiredMixin, FormValidMessageMixin, DeleteMessageMixin,
+                         DeleteView):
     model = Location
     success_url = reverse_lazy('locations:list')
     permission_required = 'locations.delete_location'
@@ -39,7 +44,7 @@ class LocationDeleteView(PermissionRequiredMixin, DeleteMessageMixin, DeleteView
         return _("{0} deleted!").format(self.object)
 
 
-class CountryCreateView(PermissionRequiredMixin, CreateView):
+class CountryCreateView(PermissionRequiredMixin, FormValidMessageMixin, CreateView):
     model = Country
     form_class = CountryForm
     permission_required = 'locations.create_country'

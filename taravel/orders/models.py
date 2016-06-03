@@ -57,7 +57,8 @@ class Guest(models.Model):
     order = models.ForeignKey(to=Order, verbose_name=_("Order"))
     first_name = models.CharField(verbose_name=_("First name"), max_length=50)
     second_name = models.CharField(verbose_name=_("Second name"), max_length=50)
-    government_id = models.IntegerField(verbose_name=_("Government ID"))
+    document_id = models.CharField(verbose_name=_("Number of governmental document with photo"),
+                                   max_length=50)
     objects = GuestQuerySet.as_manager()
 
     class Meta:

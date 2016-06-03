@@ -1,0 +1,21 @@
+{% load leaflet_tags %}
+
+<html>
+  <head>
+   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+     <style>#mapid { height: 180px; }</style>
+     <script>function init(){
+        var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+        L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(mymap);
+    };
+     </script>
+    {% block css %}{% endblock %}
+  </head>
+  <body onload="init();">
+     <div id="mapid"></div>
+   {% leaflet_js plugins="forms" %}
+   {% leaflet_css plugins="forms" %}
+{% block javascript %}{% endblock %}
+  </body>
+</html>

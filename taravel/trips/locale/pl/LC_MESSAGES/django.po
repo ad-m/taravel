@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-10 23:30+0000\n"
-"PO-Revision-Date: 2016-05-11 00:39+0200\n"
+"POT-Creation-Date: 2016-06-03 16:53+0000\n"
+"PO-Revision-Date: 2016-06-03 18:53+0200\n"
 "Last-Translator: Adam Dobrawy <naczelnik@jawnosc.tk>\n"
 "Language-Team: \n"
 "Language: pl\n"
@@ -19,7 +19,7 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
-#: apps.py:9 models.py:57
+#: apps.py:9 models.py:64
 msgid "Trips"
 msgstr "Wycieczki"
 
@@ -39,47 +39,47 @@ msgstr "Kraj (rosnąco)"
 msgid "Country (descending)"
 msgstr "Kraj (malejąco)"
 
-#: models.py:42
+#: models.py:49
 msgid "Location"
 msgstr "Miejsce"
 
-#: models.py:43
+#: models.py:50
 msgid "Name"
 msgstr "Nazwa"
 
-#: models.py:44
+#: models.py:51
 msgid "Slug"
 msgstr "Identyfikator redakcyjny"
 
-#: models.py:46
+#: models.py:53
 msgid "Description of trip"
 msgstr "Opis wycieczki"
 
-#: models.py:47
+#: models.py:54 templates/trips/_trip_mini.html:10
 msgid "Price"
 msgstr "Cena"
 
-#: models.py:48
+#: models.py:55
 msgid "Price per each guest"
 msgstr "Cena za każdego gościa"
 
-#: models.py:49
+#: models.py:56
 msgid "Space"
 msgstr "Miejsca"
 
-#: models.py:51
+#: models.py:58
 msgid "The maximum number of guests"
 msgstr "Maksymalna liczba gości"
 
-#: models.py:52 models.py:71 models.py:77
+#: models.py:59 models.py:78 models.py:84
 msgid "Image"
 msgstr "Obraz"
 
-#: models.py:56 models.py:70
+#: models.py:63 models.py:77
 msgid "Trip"
 msgstr "Wycieczka"
 
-#: models.py:78
+#: models.py:85
 msgid "Images"
 msgstr "Obrazy"
 
@@ -92,9 +92,25 @@ msgstr "Utworzone przez <a href=\"%(user_link)s\">%(user)s</a>."
 msgid "Order trip now"
 msgstr "Zamów wycieczkę teraz"
 
-#: templates/trips/_trip_mini.html:10
+#: templates/trips/_trip_mini.html:11
 msgid "Details"
 msgstr "Szczegóły"
+
+#: templates/trips/search.html:11
+msgid "Nearest trips near point in maximum distance 500 km."
+msgstr "Najbliższe wycieczki w odległości 500 km od punktu"
+
+#: templates/trips/search.html:23
+msgid "previous"
+msgstr "poprzedni"
+
+#: templates/trips/search.html:31
+msgid "next"
+msgstr "następny"
+
+#: templates/trips/search.html:38
+msgid "Nothing found."
+msgstr "Nie znaleziono."
 
 #: templates/trips/trip_detail.html:6
 msgid "Change trip"
@@ -116,27 +132,27 @@ msgstr "Twoje zamówienia wycieczki"
 msgid "Add trip"
 msgstr "Dodaj wycieczkę"
 
-#: templates/trips/trip_form.html:10
+#: templates/trips/trip_form.html:11
 msgid "remove"
 msgstr "usuń"
 
-#: templates/trips/trip_form.html:11
+#: templates/trips/trip_form.html:12
 msgid "add another image"
 msgstr "dodaj kolejne zdjęcie"
 
-#: templates/trips/trip_form.html:20
+#: templates/trips/trip_form.html:34
 msgid "Add location"
 msgstr "Dodaj miejsce"
 
-#: templates/trips/trip_form.html:24
+#: templates/trips/trip_form.html:38
 msgid "Add country"
 msgstr "Dodaj kraj"
 
-#: templates/trips/trip_form.html:31
+#: templates/trips/trip_form.html:45
 msgid "Gallery"
 msgstr "Galeria"
 
-#: templates/trips/trip_form.html:36
+#: templates/trips/trip_form.html:50
 msgid "Save"
 msgstr "Zapisz"
 

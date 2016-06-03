@@ -26,10 +26,18 @@
 </div>
 {% endif %}
 
-{% if order_list %}
+{% if object.user_orders %}
 <div class="well">
 <h2>{% trans 'Your orders of the trip' %}</h2>
-{% include 'orders/_order_list_mini.html' with object_list=order_list show_value=True %}
+{% include 'orders/_order_list_mini.html' with object_list=object.user_orders show_value=True %}
 </div>
 {% endif %}
+
+{% if user.is_staff %}
+<div class="well">
+<h2>{% trans 'All orders of the trip' %}</h2>
+{% include 'orders/_order_list_mini_staff.html' with object_list=object.orders show_value=True %}
+</div>
+{% endif %}
+
 {% endblock %}

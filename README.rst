@@ -17,7 +17,6 @@ taravel
 
 Celem strony jest pokazanie, jakie informacje są w posiadaniu spółek, a mimo to nie publikują one ich na BIP + wskazanie, czemu te informacje są czy mogą być ważne dla mieszkańców i zachęcenie mieszkańców do interesowania się.
 
-
 LICENSE: MIT
 
 Settings
@@ -50,24 +49,12 @@ To run the tests, check your test coverage, and generate an HTML coverage report
     $ coverage html
     $ open htmlcov/index.html
 
-Running tests with py.test
+Running tests
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
 
-  $ py.test
-
-Live reloading and Sass CSS compilation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Moved to `Live reloading and SASS compilation`_.
-
-.. _`Live reloading and SASS compilation`: http://cookiecutter-django.readthedocs.org/en/latest/live-reloading-and-sass-compilation.html
-
-
-
-
-
+  $ pyton manage.py test
 
 
 Sentry

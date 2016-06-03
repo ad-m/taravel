@@ -1,0 +1,27 @@
+{% load i18n %}
+<table class="table table-striped">
+    <tr>
+        <th>{% trans 'Order' %}</th>
+        <th>{% trans 'Created' %}</th>
+        <th>{% trans 'User' %}</th>
+        {% if show_value %}
+        <th>{% trans 'Value' %}</th>
+        {% endif %}
+        <th>{% trans 'Paid' %}</th>
+        <th>{% trans 'Action' %}</th>
+    </tr>
+    {% for object in object_list %}
+    <tr>
+        <td>{{object}}</td>
+        <td>{{object.created}}</td>
+        <td><a href="{{object.user.get_absolute_url}}">{{object.user}}</a></td>
+        {% if show_value %}
+        <th>{{ object.total_value }}</th>
+        {% endif %}
+        <td>{% include 'payments/_payment_badge.html' with status=object.is_paid %}</td>
+        <td>
+            <a href="{{object.get_absolute_url}}" class="btn btn-primary btn-sm">{% trans 'Details' %}</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>

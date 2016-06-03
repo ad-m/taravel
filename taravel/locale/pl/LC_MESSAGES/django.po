@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-10 22:38+0000\n"
-"PO-Revision-Date: 2016-05-11 00:38+0200\n"
+"POT-Creation-Date: 2016-05-11 05:30+0000\n"
+"PO-Revision-Date: 2016-05-11 07:30+0200\n"
 "Last-Translator: Adam Dobrawy <naczelnik@jawnosc.tk>\n"
 "Language-Team: \n"
 "Language: pl\n"
@@ -50,7 +50,7 @@ msgstr "Niezweryfukowany"
 
 #: templates/account/email.html:31
 msgid "Primary"
-msgstr "Podatawowy"
+msgstr "Podstawowy"
 
 #: templates/account/email.html:37
 msgid "Make Primary"
@@ -76,15 +76,15 @@ msgstr ""
 "Obecnie nie masz ustawionego adresu e-mail. Powinieneś ustawić adres e-mail, "
 "aby móc otrzymywać powiadomienia, zresetować hasło itd."
 
-#: templates/account/email.html:51
+#: templates/account/email.html:52
 msgid "Add E-mail Address"
 msgstr "Dodaj adres e-mail"
 
-#: templates/account/email.html:56
+#: templates/account/email.html:57
 msgid "Add E-mail"
 msgstr "Dodaj e-mail"
 
-#: templates/account/email.html:66
+#: templates/account/email.html:67
 msgid "Do you really want to remove the selected e-mail address?"
 msgstr "Czy na pewno chcesz usunąć wybrany adres e-mail?"
 
@@ -126,7 +126,7 @@ msgstr ""
 "Potwierdzono, że adres <a href=\"mailto:%(email)s\">%(email)s</a> należy do "
 "użytkownika %(user_display)s."
 
-#: templates/account/login.html:7 templates/account/login.html.py:12
+#: templates/account/login.html:7 templates/account/login.html:12
 #: templates/account/login.html:19
 msgid "Sign In"
 msgstr "Zaloguj"
@@ -135,7 +135,7 @@ msgstr "Zaloguj"
 msgid "Forgot Password?"
 msgstr "Zapomniane hasło?"
 
-#: templates/account/logout.html:5 templates/account/logout.html.py:10
+#: templates/account/logout.html:5 templates/account/logout.html:10
 #: templates/account/logout.html:19
 msgid "Sign Out"
 msgstr "Wyloguj"
@@ -220,8 +220,8 @@ msgstr "Ustaw hasło"
 msgid "Signup"
 msgstr "Zarejestruj"
 
-#: templates/account/signup.html:12 templates/account/signup.html.py:22
-#: templates/base.html:55
+#: templates/account/signup.html:12 templates/account/signup.html:22
+#: templates/base.html:58
 msgid "Sign Up"
 msgstr "Zarejestruj"
 
@@ -286,14 +286,22 @@ msgstr ""
 "<strong>Note:</strong> możesz wciąż <a href=\"%(email_url)s\">zmienić swój "
 "adres e-mail</a>."
 
-#: templates/base.html:48
+#: templates/base.html:41
+msgid "Home"
+msgstr "Strona główna"
+
+#: templates/base.html:44
+msgid "Search on map"
+msgstr "Wyszukaj na mapie"
+
+#: templates/base.html:51
 msgid "My Profile"
 msgstr "Profil"
 
-#: templates/base.html:51
+#: templates/base.html:54
 msgid "Logout"
 msgstr "Wyloguj"
 
-#: templates/base.html:58
+#: templates/base.html:61
 msgid "Log In"
 msgstr "Zaloguj"

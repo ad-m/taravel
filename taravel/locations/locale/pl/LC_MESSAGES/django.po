@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-10 23:33+0000\n"
+"POT-Creation-Date: 2016-06-03 16:53+0000\n"
 "PO-Revision-Date: 2016-05-11 01:34+0200\n"
 "Last-Translator: Adam Dobrawy <naczelnik@jawnosc.tk>\n"
 "Language-Team: \n"
@@ -83,21 +83,21 @@ msgstr "Pozycja"
 msgid "Location"
 msgstr "Miejsce"
 
-#: templates/locations/location_form.html:6
+#: templates/locations/location_form.html:8
 msgid "Add country"
 msgstr "Dodaj kraj"
 
-#: views.py:18 views.py:45
+#: views.py:25 views.py:53
 #, python-brace-format
 msgid "{0} created!"
 msgstr "{0} utworzony!"
 
-#: views.py:27 views.py:54
+#: views.py:34 views.py:62
 #, python-brace-format
 msgid "{0} updated!"
 msgstr "{0} zaktualizowany!"
 
-#: views.py:36 views.py:63
+#: views.py:44 views.py:71
 #, python-brace-format
 msgid "{0} deleted!"
 msgstr "{0} usunięty!"

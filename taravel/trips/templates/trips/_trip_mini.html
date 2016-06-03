@@ -5,8 +5,9 @@
       <img src="{{object.main_image.thumbnail.318x200}}" width="100%">
     </div>
     <div class="col-sm-8">
-      <h4 class="card-title">{{object}}</h4>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <h4>{{object}}</h4>
+      {{object.description | safe }}
+      <p>{% trans 'Price' %}: {{object.get_price_display}}</p>
       <a href="{{object.get_absolute_url}}" class="btn btn-primary">{% trans 'Details' %}</a>
     </div>
   </div>

@@ -4,6 +4,7 @@ from django import forms
 from .models import Trip
 from braces.forms import UserKwargModelFormMixin
 from tinymce.widgets import TinyMCE
+from leaflet.forms.fields import PointField
 
 
 class TripForm(UserKwargModelFormMixin, SingleButtonMixin, forms.ModelForm):
@@ -19,3 +20,11 @@ class TripForm(UserKwargModelFormMixin, SingleButtonMixin, forms.ModelForm):
         widgets = {
                 'description': TinyMCE(),
         }
+
+
+class SearchForm(SingleButtonMixin, forms.Form):
+    point = PointField()
+
+    def __init__(self, *args, **kwargs):
+        super(SearchForm, self).__init__(*args, **kwargs)
+        self.helper.form_method = 'get'

@@ -5,6 +5,7 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
+    url(r'^$', views.LocationMapView.as_view()),
     url(r'^~create$', views.LocationCreateView.as_view(),
         name="create"),
     url(r'^location-(?P<pk>\w+)/~update$', views.LocationUpdateView.as_view(),
@@ -20,6 +21,5 @@ urlpatterns = [
     url(r'^location/(?P<z>\d+)/(?P<x>\d+)/(?P<y>\d+).geojson$',
         views.LocationTiledGeoJSONLayerView.as_view(),
         name="data"),
-    url(r'^location.geojson$', views.LocationMapLayer.as_view(), name='data')
-
+    url(r'^location.geojson$', views.LocationMapLayer.as_view(), name='data'),
 ]

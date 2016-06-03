@@ -10,9 +10,10 @@ from model_utils.models import TimeStampedModel
 from taravel.locations.models import Location
 from taravel.orders.models import Order
 from versatileimagefield.fields import VersatileImageField
+from django.contrib.gis.db.models.query import GeoQuerySet
 
 
-class TripQuerySet(models.QuerySet):
+class TripQuerySet(GeoQuerySet):
     def with_guest_count(self):
         return self.annotate(guest_count=models.Count('order__guest')).all()
 
@@ -35,6 +36,21 @@ class TripQuerySet(models.QuerySet):
         return self.prefetch_related(Prefetch('order_set',
                                               queryset=qs,
                                               to_attr='user_orders'))
+
+    def with_orders(self):
+        qs = (Order.objects.
+              with_total_value().
+              with_payment().
+              select_related('user').
+              all())
+        return self.prefetch_related(Prefetch('order_set',
+                                              queryset=qs,
+                                              to_attr='orders'))
+
+    def nearest(self, point):
+        return (self.
+                distance(point, field_name='location__position').
+                order_by('distance'))
 
 
 @python_2_unicode_compatible
@@ -63,7 +79,7 @@ class Trip(TimeStampedModel):
         return reverse('trips:details', kwargs={'slug': self.slug})
 
     def get_price_display(self):
-        return "%.2f PLN" % (self.price / 100)
+        return "%.2f PLN" % (self.base_price / 100)
 
 
 class Image(models.Model):

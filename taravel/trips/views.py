@@ -37,6 +37,8 @@ class TripDetailView(SelectRelatedMixin, DetailView):
         qs = super(TripDetailView, self).get_queryset(*args, **kwargs)
         if self.request.user.is_authenticated():
             qs = qs.with_user_orders(self.request.user)
+        if self.request.user.is_staff:
+            qs = qs.with_orders()
         return qs
 
 

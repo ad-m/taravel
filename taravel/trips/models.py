@@ -11,7 +11,6 @@ from taravel.locations.models import Location
 from taravel.orders.models import Order
 from versatileimagefield.fields import VersatileImageField
 from django.contrib.gis.db.models.query import GeoQuerySet
-from django.contrib.gis.measure import D
 
 
 class TripQuerySet(GeoQuerySet):
@@ -37,6 +36,16 @@ class TripQuerySet(GeoQuerySet):
         return self.prefetch_related(Prefetch('order_set',
                                               queryset=qs,
                                               to_attr='user_orders'))
+
+    def with_orders(self):
+        qs = (Order.objects.
+              with_total_value().
+              with_payment().
+              select_related('user').
+              all())
+        return self.prefetch_related(Prefetch('order_set',
+                                              queryset=qs,
+                                              to_attr='orders'))
 
     def nearest(self, point):
         return (self.
